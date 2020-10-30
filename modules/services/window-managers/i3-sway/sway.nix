@@ -47,81 +47,84 @@ let
         type = types.attrsOf (types.nullOr
           # (commonOptions.coercedToKeybind commonOptions.keybindType));
           (commonOptions.bindingType types.str commonOptions.keybindType));
-        default = commonFunctions.mkDefaultKeybind {
-          "${cfg.config.modifier}+Return".value = "exec ${cfg.config.terminal}";
-          "${cfg.config.modifier}+Shift+q".value = "kill";
-          "${cfg.config.modifier}+d".value = "exec ${cfg.config.menu}";
+        default =
+          let conf = commonFunctions.mkDefaultKeybind {
+            "${cfg.config.modifier}+Return".value = "exec ${cfg.config.terminal}";
+            "${cfg.config.modifier}+Shift+q".value = "kill";
+            "${cfg.config.modifier}+d".value = "exec ${cfg.config.menu}";
 
-          "${cfg.config.modifier}+${cfg.config.left}".value = "focus left";
-          "${cfg.config.modifier}+${cfg.config.down}".value = "focus down";
-          "${cfg.config.modifier}+${cfg.config.up}".value = "focus up";
-          "${cfg.config.modifier}+${cfg.config.right}".value = "focus right";
+            "${cfg.config.modifier}+${cfg.config.left}".value = "focus left";
+            "${cfg.config.modifier}+${cfg.config.down}".value = "focus down";
+            "${cfg.config.modifier}+${cfg.config.up}".value = "focus up";
+            "${cfg.config.modifier}+${cfg.config.right}".value = "focus right";
 
-          "${cfg.config.modifier}+Left".value = "focus left";
-          "${cfg.config.modifier}+Down".value = "focus down";
-          "${cfg.config.modifier}+Up".value = "focus up";
-          "${cfg.config.modifier}+Right".value = "focus right";
+            "${cfg.config.modifier}+Left".value = "focus left";
+            "${cfg.config.modifier}+Down".value = "focus down";
+            "${cfg.config.modifier}+Up".value = "focus up";
+            "${cfg.config.modifier}+Right".value = "focus right";
 
-          "${cfg.config.modifier}+Shift+${cfg.config.left}".value = "move left";
-          "${cfg.config.modifier}+Shift+${cfg.config.down}".value = "move down";
-          "${cfg.config.modifier}+Shift+${cfg.config.up}".value = "move up";
-          "${cfg.config.modifier}+Shift+${cfg.config.right}".value = "move right";
+            "${cfg.config.modifier}+Shift+${cfg.config.left}".value = "move left";
+            "${cfg.config.modifier}+Shift+${cfg.config.down}".value = "move down";
+            "${cfg.config.modifier}+Shift+${cfg.config.up}".value = "move up";
+            "${cfg.config.modifier}+Shift+${cfg.config.right}".value =
+              "move right";
 
-          "${cfg.config.modifier}+Shift+Left".value = "move left";
-          "${cfg.config.modifier}+Shift+Down".value = "move down";
-          "${cfg.config.modifier}+Shift+Up".value = "move up";
-          "${cfg.config.modifier}+Shift+Right".value = "move right";
+            "${cfg.config.modifier}+Shift+Left".value = "move left";
+            "${cfg.config.modifier}+Shift+Down".value = "move down";
+            "${cfg.config.modifier}+Shift+Up".value = "move up";
+            "${cfg.config.modifier}+Shift+Right".value = "move right";
 
-          "${cfg.config.modifier}+b".value = "splith";
-          "${cfg.config.modifier}+v".value = "splitv";
-          "${cfg.config.modifier}+f".value = "fullscreen toggle";
-          "${cfg.config.modifier}+a".value = "focus parent";
+            "${cfg.config.modifier}+b".value = "splith";
+            "${cfg.config.modifier}+v".value = "splitv";
+            "${cfg.config.modifier}+f".value = "fullscreen toggle";
+            "${cfg.config.modifier}+a".value = "focus parent";
 
-          "${cfg.config.modifier}+s".value = "layout stacking";
-          "${cfg.config.modifier}+w".value = "layout tabbed";
-          "${cfg.config.modifier}+e".value = "layout toggle split";
+            "${cfg.config.modifier}+s".value = "layout stacking";
+            "${cfg.config.modifier}+w".value = "layout tabbed";
+            "${cfg.config.modifier}+e".value = "layout toggle split";
 
-          "${cfg.config.modifier}+Shift+space".value = "floating toggle";
-          "${cfg.config.modifier}+space".value = "focus mode_toggle";
+            "${cfg.config.modifier}+Shift+space".value = "floating toggle";
+            "${cfg.config.modifier}+space".value = "focus mode_toggle";
 
-          "${cfg.config.modifier}+1".value = "workspace number 1";
-          "${cfg.config.modifier}+2".value = "workspace number 2";
-          "${cfg.config.modifier}+3".value = "workspace number 3";
-          "${cfg.config.modifier}+4".value = "workspace number 4";
-          "${cfg.config.modifier}+5".value = "workspace number 5";
-          "${cfg.config.modifier}+6".value = "workspace number 6";
-          "${cfg.config.modifier}+7".value = "workspace number 7";
-          "${cfg.config.modifier}+8".value = "workspace number 8";
-          "${cfg.config.modifier}+9".value = "workspace number 9";
+            "${cfg.config.modifier}+1".value = "workspace number 1";
+            "${cfg.config.modifier}+2".value = "workspace number 2";
+            "${cfg.config.modifier}+3".value = "workspace number 3";
+            "${cfg.config.modifier}+4".value = "workspace number 4";
+            "${cfg.config.modifier}+5".value = "workspace number 5";
+            "${cfg.config.modifier}+6".value = "workspace number 6";
+            "${cfg.config.modifier}+7".value = "workspace number 7";
+            "${cfg.config.modifier}+8".value = "workspace number 8";
+            "${cfg.config.modifier}+9".value = "workspace number 9";
 
-          "${cfg.config.modifier}+Shift+1".value =
-            "move container to workspace number 1";
-          "${cfg.config.modifier}+Shift+2".value =
-            "move container to workspace number 2";
-          "${cfg.config.modifier}+Shift+3".value =
-            "move container to workspace number 3";
-          "${cfg.config.modifier}+Shift+4".value =
-            "move container to workspace number 4";
-          "${cfg.config.modifier}+Shift+5".value =
-            "move container to workspace number 5";
-          "${cfg.config.modifier}+Shift+6".value =
-            "move container to workspace number 6";
-          "${cfg.config.modifier}+Shift+7".value =
-            "move container to workspace number 7";
-          "${cfg.config.modifier}+Shift+8".value =
-            "move container to workspace number 8";
-          "${cfg.config.modifier}+Shift+9".value =
-            "move container to workspace number 9";
+            "${cfg.config.modifier}+Shift+1".value =
+              "move container to workspace number 1";
+            "${cfg.config.modifier}+Shift+2".value =
+              "move container to workspace number 2";
+            "${cfg.config.modifier}+Shift+3".value =
+              "move container to workspace number 3";
+            "${cfg.config.modifier}+Shift+4".value =
+              "move container to workspace number 4";
+            "${cfg.config.modifier}+Shift+5".value =
+              "move container to workspace number 5";
+            "${cfg.config.modifier}+Shift+6".value =
+              "move container to workspace number 6";
+            "${cfg.config.modifier}+Shift+7".value =
+              "move container to workspace number 7";
+            "${cfg.config.modifier}+Shift+8".value =
+              "move container to workspace number 8";
+            "${cfg.config.modifier}+Shift+9".value =
+              "move container to workspace number 9";
 
-          "${cfg.config.modifier}+Shift+minus".value = "move scratchpad";
-          "${cfg.config.modifier}+minus".value = "scratchpad show";
+            "${cfg.config.modifier}+Shift+minus".value = "move scratchpad";
+            "${cfg.config.modifier}+minus".value = "scratchpad show";
 
-          "${cfg.config.modifier}+Shift+c".value = "reload";
-          "${cfg.config.modifier}+Shift+e".value =
-            "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+            "${cfg.config.modifier}+Shift+c".value = "reload";
+            "${cfg.config.modifier}+Shift+e".value =
+              "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
-          "${cfg.config.modifier}+r".value = "mode resize";
-        };
+            "${cfg.config.modifier}+r".value = "mode resize";
+          };
+        in lib.traceSeq (attrNames conf) conf;
         defaultText = "Default sway keybindings.";
         description = ''
           An attribute set that assigns a key press to an action using a key symbol.
@@ -170,19 +173,19 @@ let
       };
 
       modes = mkOption {
-        type = types.attrsOf (types.attrsOf types.str);
+        type = types.attrsOf (types.attrsOf (types.nullOr (commonOptions.coercedToKeybind commonOptions.keybindType)));
         default = {
-          resize = {
-            "${cfg.config.left}" = "resize shrink width 10 px";
-            "${cfg.config.down}" = "resize grow height 10 px";
-            "${cfg.config.up}" = "resize shrink height 10 px";
-            "${cfg.config.right}" = "resize grow width 10 px";
-            "Left" = "resize shrink width 10 px";
-            "Down" = "resize grow height 10 px";
-            "Up" = "resize shrink height 10 px";
-            "Right" = "resize grow width 10 px";
-            "Escape" = "mode default";
-            "Return" = "mode default";
+          resize = mkDefaultKeybind {
+            "${cfg.config.left}".value = "resize shrink width 10 px";
+            "${cfg.config.down}".value = "resize grow height 10 px";
+            "${cfg.config.up}".value = "resize shrink height 10 px";
+            "${cfg.config.right}".value = "resize grow width 10 px";
+            "Left".value = "resize shrink width 10 px";
+            "Down".value = "resize grow height 10 px";
+            "Up".value = "resize shrink height 10 px";
+            "Right".value = "resize grow width 10 px";
+            "Escape".value = "mode default";
+            "Return".value = "mode default";
           };
         };
         description = ''
@@ -409,6 +412,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    # wayland.windowManager.sway.config.keybindings = ;
+
     home.packages = optional (cfg.package != null) cfg.package
       ++ optional cfg.xwayland pkgs.xwayland;
     xdg.configFile."sway/config" = {

@@ -21,76 +21,77 @@ let
 
       keybindings = mkOption {
         type = types.attrsOf (types.nullOr
+          # (commonOptions.coercedToKeybind commonOptions.keybindType));
           (commonOptions.bindingType types.str commonOptions.keybindType));
         default = commonFunctions.mkDefaultKeybind {
-          "${cfg.config.modifier}+Return" = "exec ${cfg.config.terminal}";
-          "${cfg.config.modifier}+Shift+q" = "kill";
-          "${cfg.config.modifier}+d" = "exec ${cfg.config.menu}";
+          "${cfg.config.modifier}+Return".value = "exec ${cfg.config.terminal}";
+          "${cfg.config.modifier}+Shift+q".value = "kill";
+          "${cfg.config.modifier}+d".value = "exec ${cfg.config.menu}";
 
-          "${cfg.config.modifier}+Left" = "focus left";
-          "${cfg.config.modifier}+Down" = "focus down";
-          "${cfg.config.modifier}+Up" = "focus up";
-          "${cfg.config.modifier}+Right" = "focus right";
+          "${cfg.config.modifier}+Left".value = "focus left";
+          "${cfg.config.modifier}+Down".value = "focus down";
+          "${cfg.config.modifier}+Up".value = "focus up";
+          "${cfg.config.modifier}+Right".value = "focus right";
 
-          "${cfg.config.modifier}+Shift+Left" = "move left";
-          "${cfg.config.modifier}+Shift+Down" = "move down";
-          "${cfg.config.modifier}+Shift+Up" = "move up";
-          "${cfg.config.modifier}+Shift+Right" = "move right";
+          "${cfg.config.modifier}+Shift+Left".value = "move left";
+          "${cfg.config.modifier}+Shift+Down".value = "move down";
+          "${cfg.config.modifier}+Shift+Up".value = "move up";
+          "${cfg.config.modifier}+Shift+Right".value = "move right";
 
-          "${cfg.config.modifier}+h" = "split h";
-          "${cfg.config.modifier}+v" = "split v";
-          "${cfg.config.modifier}+f" = "fullscreen toggle";
+          "${cfg.config.modifier}+h".value = "split h";
+          "${cfg.config.modifier}+v".value = "split v";
+          "${cfg.config.modifier}+f".value = "fullscreen toggle";
 
-          "${cfg.config.modifier}+s" = "layout stacking";
-          "${cfg.config.modifier}+w" = "layout tabbed";
-          "${cfg.config.modifier}+e" = "layout toggle split";
+          "${cfg.config.modifier}+s".value = "layout stacking";
+          "${cfg.config.modifier}+w".value = "layout tabbed";
+          "${cfg.config.modifier}+e".value = "layout toggle split";
 
-          "${cfg.config.modifier}+Shift+space" = "floating toggle";
-          "${cfg.config.modifier}+space" = "focus mode_toggle";
+          "${cfg.config.modifier}+Shift+space".value = "floating toggle";
+          "${cfg.config.modifier}+space".value = "focus mode_toggle";
 
-          "${cfg.config.modifier}+a" = "focus parent";
+          "${cfg.config.modifier}+a".value = "focus parent";
 
-          "${cfg.config.modifier}+Shift+minus" = "move scratchpad";
-          "${cfg.config.modifier}+minus" = "scratchpad show";
+          "${cfg.config.modifier}+Shift+minus".value = "move scratchpad";
+          "${cfg.config.modifier}+minus".value = "scratchpad show";
 
-          "${cfg.config.modifier}+1" = "workspace number 1";
-          "${cfg.config.modifier}+2" = "workspace number 2";
-          "${cfg.config.modifier}+3" = "workspace number 3";
-          "${cfg.config.modifier}+4" = "workspace number 4";
-          "${cfg.config.modifier}+5" = "workspace number 5";
-          "${cfg.config.modifier}+6" = "workspace number 6";
-          "${cfg.config.modifier}+7" = "workspace number 7";
-          "${cfg.config.modifier}+8" = "workspace number 8";
-          "${cfg.config.modifier}+9" = "workspace number 9";
-          "${cfg.config.modifier}+0" = "workspace number 10";
+          "${cfg.config.modifier}+1".value = "workspace number 1";
+          "${cfg.config.modifier}+2".value = "workspace number 2";
+          "${cfg.config.modifier}+3".value = "workspace number 3";
+          "${cfg.config.modifier}+4".value = "workspace number 4";
+          "${cfg.config.modifier}+5".value = "workspace number 5";
+          "${cfg.config.modifier}+6".value = "workspace number 6";
+          "${cfg.config.modifier}+7".value = "workspace number 7";
+          "${cfg.config.modifier}+8".value = "workspace number 8";
+          "${cfg.config.modifier}+9".value = "workspace number 9";
+          "${cfg.config.modifier}+0".value = "workspace number 10";
 
-          "${cfg.config.modifier}+Shift+1" =
+          "${cfg.config.modifier}+Shift+1".value =
             "move container to workspace number 1";
-          "${cfg.config.modifier}+Shift+2" =
+          "${cfg.config.modifier}+Shift+2".value =
             "move container to workspace number 2";
-          "${cfg.config.modifier}+Shift+3" =
+          "${cfg.config.modifier}+Shift+3".value =
             "move container to workspace number 3";
-          "${cfg.config.modifier}+Shift+4" =
+          "${cfg.config.modifier}+Shift+4".value =
             "move container to workspace number 4";
-          "${cfg.config.modifier}+Shift+5" =
+          "${cfg.config.modifier}+Shift+5".value =
             "move container to workspace number 5";
-          "${cfg.config.modifier}+Shift+6" =
+          "${cfg.config.modifier}+Shift+6".value =
             "move container to workspace number 6";
-          "${cfg.config.modifier}+Shift+7" =
+          "${cfg.config.modifier}+Shift+7".value =
             "move container to workspace number 7";
-          "${cfg.config.modifier}+Shift+8" =
+          "${cfg.config.modifier}+Shift+8".value =
             "move container to workspace number 8";
-          "${cfg.config.modifier}+Shift+9" =
+          "${cfg.config.modifier}+Shift+9".value =
             "move container to workspace number 9";
-          "${cfg.config.modifier}+Shift+0" =
+          "${cfg.config.modifier}+Shift+0".value =
             "move container to workspace number 10";
 
-          "${cfg.config.modifier}+Shift+c" = "reload";
-          "${cfg.config.modifier}+Shift+r" = "restart";
-          "${cfg.config.modifier}+Shift+e" =
+          "${cfg.config.modifier}+Shift+c".value = "reload";
+          "${cfg.config.modifier}+Shift+r".value = "restart";
+          "${cfg.config.modifier}+Shift+e".value =
             "exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'";
 
-          "${cfg.config.modifier}+r" = "mode resize";
+          "${cfg.config.modifier}+r".value = "mode resize";
         };
         defaultText = "Default i3 keybindings.";
         description = ''

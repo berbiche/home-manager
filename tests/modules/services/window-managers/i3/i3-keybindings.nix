@@ -16,6 +16,9 @@ with lib;
             flags = [ "--release" ];
             value = "invented-key-command";
           };
+          "${modifier}+d" = {
+            flags = [ "--release" ];
+          };
         };
     };
 

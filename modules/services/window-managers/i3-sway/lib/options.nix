@@ -314,13 +314,12 @@ let
     options = {
       flags = mkOption {
         type = types.listOf flagsType;
-        default = [];
+        default = [ ];
         description = "Keybind flags";
         example = literalExample ''[ "--release" ]'';
       };
       value = mkOption {
         type = types.nullOr types.str;
-        default = "";
         description = "Keybind value";
         example = "exec /bin/script.sh";
       };
@@ -344,7 +343,7 @@ let
     options = {
       flags = mkOption {
         type = types.listOf flagsType;
-        default = [];
+        default = [ ];
         description = "Keycode flags";
         example = literalExample ''[ "--release" ]'';
       };
@@ -380,22 +379,32 @@ let
           areEqual = def1: def2: attr:
             def1.value.${attr} or null == def2.value.${attr} or null;
           # This is available in the latest master of Nixpkgs as `lib.options.showDefs`
-          showDefs = defs: concatMapStrings (def:
-            let
-              # Pretty print the value for display, if successful
-              prettyEval = builtins.tryEval (lib.generators.toPretty {} def.value);
-              # Split it into its lines
-              lines = filter (v: ! isList v) (builtins.split "\n" prettyEval.value);
-              # Only display the first 5 lines, and indent them for better visibility
-              value = concatStringsSep "\n    " (take 5 lines ++ optional (length lines > 5) "...");
-              result =
-                # Don't print any value if evaluating the value strictly fails
-                if ! prettyEval.success then ""
-                # Put it on a new line if it consists of multiple
-                else if length lines > 1 then ":\n    " + value
-                else ": " + value;
-            in "\n- In `${def.file}'${result}"
-          ) defs;
+          showDefs = defs:
+            concatMapStrings (def:
+              let
+                # Pretty print the value for display, if successful
+                prettyEval =
+                  builtins.tryEval (lib.generators.toPretty { } def.value);
+                # Split it into its lines
+                lines =
+                  filter (v: !isList v) (builtins.split "\n" prettyEval.value);
+                # Only display the first 5 lines, and indent them for better visibility
+                value = concatStringsSep "\n    "
+                  (take 5 lines ++ optional (length lines > 5) "...");
+                result =
+                  # Don't print any value if evaluating the value strictly fails
+                  if !prettyEval.success then
+                    ""
+                    # Put it on a new line if it consists of multiple
+                  else if length lines > 1 then
+                    ''
+                      :
+                          '' + value
+                  else
+                    ": " + value;
+              in ''
+
+                - In `${def.file}'${result}'') defs;
           error = first: def:
             throw
             "The option `${showOption loc}' has conflicting definition values:${
@@ -411,10 +420,10 @@ let
         else if length defs == 1 then
           (elemAt defs 0).value
         else
-          /* We recurse on all of the definitions and try to merge a single string value with
-             a set where only flags is defined.
-          */
-          (foldl' (first: def: 
+        /* We recurse on all of the definitions and try to merge a single string value with
+           a set where only flags is defined.
+        */
+          (foldl' (first: def:
             # Merge string with set if they have the same value
             if isAttrs first && isString def
             && (isNull first "value" || areEqual def first "value") then
@@ -424,7 +433,7 @@ let
                   value = def.value;
                 };
               }
-            # Merge string with set if they have the same value
+              # Merge string with set if they have the same value
             else if isString first && isAttrs def
             && (isNull def "value" || areEqual def first "value") then
               def // {
@@ -434,13 +443,15 @@ let
                 };
               }
               # Noop if the two are sets with the same value
-            else if isAttrs first && isAttrs def && first.value == def.value then
+            else if isAttrs first && isAttrs def && first.value
+            == def.value then
               first
               # Noop if the two are strings with the same value
             else if isString first && isString def && first.value
             == def.value then
               first
-            else if isAttrs first && isAttrs def && areEqual def first "flags" && (isNull first "value" || isNull def "value") then
+            else if isAttrs first && isAttrs def && areEqual def first "flags"
+            && (isNull first "value" || isNull def "value") then
               first // {
                 value = {
                   flags = first.value.flags;
@@ -457,7 +468,7 @@ let
     let
       func = value: {
         flags = [ ];
-        value = value;
+        value = builtins.trace "value ${value}" value;
       };
     in types.coercedTo types.str func keybindType;
 

@@ -11,7 +11,7 @@ in {
       # overriding findutils causes issues
       config.menu = "${pkgs.dmenu}/bin/dmenu_run";
 
-      config.keybindings = {
+      config.keybindings = lib.mkOptionDefault {
         # bindsym --release --input-device=t Mod1+space
         "${cfg.config.modifier}+space" = {
           flags = [ "--release" "--input-device=t" ];
@@ -19,7 +19,7 @@ in {
         };
         "dummy-2".value = "exec echo";
         # These commands will result in an empty line
-        "${cfg.config.modifier}+v".flags = ["--release"];
+        "${cfg.config.modifier}+v".flags = [ "--release" ];
         "dummy" = null;
         "dummy-1".value = null;
       };

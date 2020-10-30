@@ -9,17 +9,12 @@ let
     keycomb: action:
     let
       notEmpty = list: filter (x: x != "") (flatten list);
-      action' = action.value or action;
       args = concatStringsSep " " (notEmpty [
         (action.flags or "")
         (optionalString (bindsymArgs != "") bindsymArgs)
       ]);
-      hasValue = if isAttrs action then
-        ! elem (action.value or null) [ null "" ]
-      else
-        action != null && action != "";
-    in optionalString hasValue
-    (concatStringsSep " " (notEmpty [ type args keycomb action' ]));
+    in optionalString (action.value or null != null)
+      (concatStringsSep " " (notEmpty [ type args keycomb action.value ]));
 
 in rec {
   criteriaStr = criteria:
@@ -39,12 +34,8 @@ in rec {
     let generateBindings = (toBinding { type = "bindcode"; });
     in concatStringsSep "\n" (mapAttrsToList generateBindings keycodebindings);
 
-  mkDefaultKeybind = mapAttrs (n: v:
-    if isAttrs v then
-      mkDefaultKeybind v
-    else
-      mkOptionDefault v
-    );
+  # mkOptionDefault on a keybind/keycode attrs
+  mkDefaultKeybind = mapAttrs (_: mapAttrs mkOptionDefault);
 
   colorSetStr = c:
     concatStringsSep " " [

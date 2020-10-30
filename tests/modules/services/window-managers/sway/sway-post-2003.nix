@@ -2,7 +2,8 @@
 
 with lib;
 
-{
+let cfg = config.wayland.windowManager.sway;
+in {
   config = {
     home.stateVersion = "20.09";
 
@@ -11,6 +12,12 @@ with lib;
       package = pkgs.writeScriptBin "sway" "" // { outPath = "@sway"; };
       # overriding findutils causes issues
       config.menu = "${pkgs.dmenu}/bin/dmenu_run";
+      config.keybindings = lib.mkOptionDefault {
+        "${cfg.config.modifier}+space" = {
+          flags = [ "--release" "--input-device=t" ];
+          value = "test";
+        };
+      };
     };
 
     nixpkgs.overlays = [

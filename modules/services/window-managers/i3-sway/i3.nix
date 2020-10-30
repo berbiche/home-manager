@@ -20,8 +20,9 @@ let
         terminal;
 
       keybindings = mkOption {
-        type = types.attrsOf (types.nullOr types.str);
-        default = mapAttrs (n: mkOptionDefault) {
+        type = types.attrsOf (types.nullOr
+          (commonOptions.bindingType types.str commonOptions.keybindType));
+        default = commonFunctions.mkDefaultKeybind {
           "${cfg.config.modifier}+Return" = "exec ${cfg.config.terminal}";
           "${cfg.config.modifier}+Shift+q" = "kill";
           "${cfg.config.modifier}+d" = "exec ${cfg.config.menu}";

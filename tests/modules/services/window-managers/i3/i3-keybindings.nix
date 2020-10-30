@@ -12,7 +12,10 @@ with lib;
         in lib.mkOptionDefault {
           "${modifier}+Left" = "overridden-command";
           "${modifier}+Right" = null;
-          "${modifier}+Invented" = "invented-key-command";
+          "${modifier}+Invented" = {
+            flags = [ "--release" ];
+            value = "invented-key-command";
+          };
         };
     };
 

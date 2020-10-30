@@ -301,9 +301,169 @@ let
     };
   };
 
+  keybindType = types.submodule (let
+    flags = [ "--whole-window" "--border" "--exclude-titlebar" "--release" ]
+      ++ optionals (moduleName == "sway") [ "--locked" "--no-warn" ];
+    inputDevice = types.strMatching "--input-device=.+";
+    flagsType = assert moduleName == "sway" || moduleName == "i3";
+      if moduleName == "sway" then
+        types.either inputDevice (types.enum flags)
+      else
+        types.enum flags;
+  in {
+    options = {
+      flags = mkOption {
+        type = types.listOf flagsType;
+        default = [];
+        description = "Keybind flags";
+        example = literalExample ''[ "--release" ]'';
+      };
+      value = mkOption {
+        type = types.nullOr types.str;
+        default = "";
+        description = "Keybind value";
+        example = "exec /bin/script.sh";
+      };
+    };
+  });
+
+  keycodeType = types.submodule (let
+    flags = [ "--release" ] ++ optionals (moduleName == "sway") [
+      "--whole-window"
+      "--border"
+      "--exclude-titlebar"
+      "--locked"
+      "--no-warn"
+    ];
+    inputDevice = types.strMatching "--input-device=.+";
+    flagsType = if moduleName == "sway" then
+      types.either inputDevice (types.enum flags)
+    else
+      types.enum flags;
+  in {
+    options = {
+      flags = mkOption {
+        type = types.listOf flagsType;
+        default = [];
+        description = "Keycode flags";
+        example = literalExample ''[ "--release" ]'';
+      };
+      value = mkOption {
+        type = types.nullOr types.str;
+        description = "Keycode value";
+        example = "exec /bin/script.sh";
+      };
+    };
+  });
+
+  /* This is copied from <nixpkgs>/lib/types.nix @ types.either
+     with a modification to the last outer else clause.
+
+     Basically, we want key{bindings,codes} to be me mergeable where the user only redefines
+     `defaultKeybinding.flags` to `defaultKeybinding = { inherit flags; value = defaultKeybinding; };`.
+     Keybindings/Keycodes are an `either str {keybind/keycode}Type`.
+
+     We copied the merge definition of either and expanded that of `mergeOneOption`
+     to ressemble the one of `mergeEqualOption` plus our modifications.
+
+     The logic is somewhat similar to `types.coercedTo` where we coerced the string to a set.
+
+     There are test cases in `tests/modules/services/window-managers/sway` for the merging.
+  */
+  bindingType = t1: t2:
+    (types.either t1 t2) // {
+      merge = loc: defs:
+        let
+          defList = traceSeq defs (map (d: d.value) defs);
+          notNull = def: attr: (def.value.${attr} or null) != null;
+          isNull = def: attr: !notNull def attr;
+          areEqual = def1: def2: attr:
+            def1.value.${attr} or null == def2.value.${attr} or null;
+          # This is available in the latest master of Nixpkgs as `lib.options.showDefs`
+          showDefs = defs: concatMapStrings (def:
+            let
+              # Pretty print the value for display, if successful
+              prettyEval = builtins.tryEval (lib.generators.toPretty {} def.value);
+              # Split it into its lines
+              lines = filter (v: ! isList v) (builtins.split "\n" prettyEval.value);
+              # Only display the first 5 lines, and indent them for better visibility
+              value = concatStringsSep "\n    " (take 5 lines ++ optional (length lines > 5) "...");
+              result =
+                # Don't print any value if evaluating the value strictly fails
+                if ! prettyEval.success then ""
+                # Put it on a new line if it consists of multiple
+                else if length lines > 1 then ":\n    " + value
+                else ": " + value;
+            in "\n- In `${def.file}'${result}"
+          ) defs;
+          error = first: def:
+            throw
+            "The option `${showOption loc}' has conflicting definition values:${
+              showDefs [ first def ]
+            }";
+        in if all (x: t1.check x) defList then
+          t1.merge loc defs
+        else if all (x: t2.check x) defList then
+          t2.merge loc defs
+        else if defs == [ ] then
+          abort "This case should never happen."
+          # Our modifications start here
+        else if length defs == 1 then
+          (elemAt defs 0).value
+        else
+          /* We recurse on all of the definitions and try to merge a single string value with
+             a set where only flags is defined.
+          */
+          (foldl' (first: def: 
+            # Merge string with set if they have the same value
+            if isAttrs first && isString def
+            && (isNull first "value" || areEqual def first "value") then
+              first // {
+                value = {
+                  flags = first.value.flags or [ ];
+                  value = def.value;
+                };
+              }
+            # Merge string with set if they have the same value
+            else if isString first && isAttrs def
+            && (isNull def "value" || areEqual def first "value") then
+              def // {
+                value = {
+                  flags = def.value.flags or [ ];
+                  value = first.value;
+                };
+              }
+              # Noop if the two are sets with the same value
+            else if isAttrs first && isAttrs def && first.value == def.value then
+              first
+              # Noop if the two are strings with the same value
+            else if isString first && isString def && first.value
+            == def.value then
+              first
+            else if isAttrs first && isAttrs def && areEqual def first "flags" && (isNull first "value" || isNull def "value") then
+              first // {
+                value = {
+                  flags = first.value.flags;
+                  value = null;
+                };
+              }
+            else if first.value == null then
+              def
+            else
+              error first def) (head defs) (tail defs)).value;
+    };
+
+  coercedToKeybind = keybindType:
+    let
+      func = value: {
+        flags = [ ];
+        value = value;
+      };
+    in types.coercedTo types.str func keybindType;
+
   criteriaModule = types.attrsOf types.str;
 in {
-  inherit fonts;
+  inherit fonts bindingType keybindType keycodeType coercedToKeybind;
 
   window = mkOption {
     type = types.submodule {
@@ -490,7 +650,7 @@ in {
   };
 
   keycodebindings = mkOption {
-    type = types.attrsOf (types.nullOr types.str);
+    type = types.attrsOf (types.nullOr (types.either types.str keycodeType));
     default = { };
     description = ''
       An attribute set that assigns keypress to an action using key code.

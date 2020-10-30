@@ -2,7 +2,8 @@
 
 with lib;
 
-{
+let cfg = config.wayland.windowManager.sway;
+in {
   config = {
     wayland.windowManager.sway = {
       enable = true;

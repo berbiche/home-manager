@@ -2,22 +2,49 @@
 
 with lib;
 
-rec {
+let
+  # Generates a string with the form "bindsym/bindcode --release Mod1+Btn2 some-action"
+  # without any extra whitespace
+  toBinding = { type, bindsymArgs ? "" }:
+    keycomb: action:
+    let
+      notEmpty = list: filter (x: x != "") (flatten list);
+      action' = action.value or action;
+      args = concatStringsSep " " (notEmpty [
+        (action.flags or "")
+        (optionalString (bindsymArgs != "") bindsymArgs)
+      ]);
+      hasValue = if isAttrs action then
+        ! elem (action.value or null) [ null "" ]
+      else
+        action != null && action != "";
+    in optionalString hasValue
+    (concatStringsSep " " (notEmpty [ type args keycomb action' ]));
+
+in rec {
   criteriaStr = criteria:
     "[${
       concatStringsSep " " (mapAttrsToList (k: v: ''${k}="${v}"'') criteria)
     }]";
 
   keybindingsStr = { keybindings, bindsymArgs ? "" }:
-    concatStringsSep "\n" (mapAttrsToList (keycomb: action:
-      optionalString (action != null) "bindsym ${
-        lib.optionalString (bindsymArgs != "") "${bindsymArgs} "
-      }${keycomb} ${action}") keybindings);
+    let
+      generateBindings = toBinding {
+        type = "bindsym";
+        inherit bindsymArgs;
+      };
+    in concatStringsSep "\n" (mapAttrsToList generateBindings keybindings);
 
   keycodebindingsStr = keycodebindings:
-    concatStringsSep "\n" (mapAttrsToList (keycomb: action:
-      optionalString (action != null) "bindcode ${keycomb} ${action}")
-      keycodebindings);
+    let generateBindings = (toBinding { type = "bindcode"; });
+    in concatStringsSep "\n" (mapAttrsToList generateBindings keycodebindings);
+
+  mkDefaultKeybind = mapAttrs (n: v:
+    if isAttrs v then
+      mkDefaultKeybind v
+    else
+      mkOptionDefault v
+    );
 
   colorSetStr = c:
     concatStringsSep " " [
@@ -31,7 +58,7 @@ rec {
 
   modeStr = name: keybindings: ''
     mode "${name}" {
-    ${keybindingsStr { inherit keybindings; }}
+      ${keybindingsStr { inherit keybindings; }}
     }
   '';
 

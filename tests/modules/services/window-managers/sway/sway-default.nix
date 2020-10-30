@@ -2,13 +2,27 @@
 
 with lib;
 
-{
+let cfg = config.wayland.windowManager.sway;
+in {
   config = {
     wayland.windowManager.sway = {
       enable = true;
       package = pkgs.writeScriptBin "sway" "" // { outPath = "@sway"; };
       # overriding findutils causes issues
       config.menu = "${pkgs.dmenu}/bin/dmenu_run";
+
+      config.keybindings = {
+        # bindsym --release --input-device=t Mod1+space
+        "${cfg.config.modifier}+space" = {
+          flags = [ "--release" "--input-device=t" ];
+          # value = "focus mode_toggle";
+        };
+        "dummy-2".value = "exec echo";
+        # These commands will result in an empty line
+        "${cfg.config.modifier}+v".flags = ["--release"];
+        "dummy" = null;
+        "dummy-1".value = null;
+      };
     };
 
     nixpkgs.overlays = [

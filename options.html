@@ -2221,19 +2221,51 @@ The possible attributes are:
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.chromium.extensions"></a><a class="term" href="options.html#opt-programs.chromium.extensions"><code class="option">programs.chromium.extensions</code></a></span></dt><dd><p>List of Chromium extensions to install.
 To find the extension ID, check its URL on the
 <a class="link" href="https://chrome.google.com/webstore/category/extensions" target="_top">Chrome Web Store</a>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p>
+To install extensions outside of the Chrome Web Store set
+<code class="literal">updateUrl</code> or <code class="literal">crxPath</code> and
+<code class="literal">version</code> as explained in the
+<a class="link" href="https://developer.chrome.com/docs/extensions/mv2/external_extensions" target="_top">Chrome
+documentation</a>.
+</p><p><span class="emphasis"><em>Type:</em></span> list of submodule or string convertible to its</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
         
         ]
     
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[
-  "chlffgpmiacpedhhbkiomidkjlcfhogd" # pushbullet
-  "mbniclmhobmnbdlbpiphghaielnnpgdp" # lightshot
-  "gcbommkclmclpchllfjekcdonpmejbdp" # https everywhere
-  "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+  { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+  {
+    id = "dcpihecpambacapedldabdbpakmachpb";
+    updateUrl = "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/updates.xml";
+  }
+  {
+    id = "aaaaaaaaaabbbbbbbbbbcccccccccc";
+    crxPath = "/home/share/extension.crx";
+    version = "1.0";
+  }
 ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/chromium.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.chromium.extensions._.crxPath"></a><a class="term" href="options.html#opt-programs.chromium.extensions._.crxPath"><code class="option">programs.chromium.extensions.*.crxPath</code></a></span></dt><dd><p>Path to the extension's crx file. Linux only.
+</p><p><span class="emphasis"><em>Type:</em></span> null or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/chromium.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.chromium.extensions._.id"></a><a class="term" href="options.html#opt-programs.chromium.extensions._.id"><code class="option">programs.chromium.extensions.*.id</code></a></span></dt><dd><p>The extension's ID from the Chome Web Store url or the unpacked crx.
+</p><p><span class="emphasis"><em>Type:</em></span> string matching the pattern [a-zA-Z]{32}</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/chromium.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.chromium.extensions._.updateUrl"></a><a class="term" href="options.html#opt-programs.chromium.extensions._.updateUrl"><code class="option">programs.chromium.extensions.*.updateUrl</code></a></span></dt><dd><p>URL of the extension's update manifest XML file. Linux only.
+</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "https://clients2.google.com/service/update2/crx"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/chromium.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.chromium.extensions._.version"></a><a class="term" href="options.html#opt-programs.chromium.extensions._.version"><code class="option">programs.chromium.extensions.*.version</code></a></span></dt><dd><p>The extension's version, required for local installation. Linux only.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/chromium.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.command-not-found.enable"></a><a class="term" href="options.html#opt-programs.command-not-found.enable"><code class="option">programs.command-not-found.enable</code></a></span></dt><dd><p>Whether to enable command-not-found hook for interactive shell.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -3043,6 +3075,10 @@ every time a new commit is checked out on your repository.
 terminal to make text boldface.
 </p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.audibleBell"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.audibleBell"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.audibleBell</code></a></span></dt><dd><p>Turn on/off the terminal's bell.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gnome-terminal.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gnome-terminal.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gnome-terminal.profile._name_.backspaceBinding"></a><a class="term" href="options.html#opt-programs.gnome-terminal.profile._name_.backspaceBinding"><code class="option">programs.gnome-terminal.profile.&lt;name&gt;.backspaceBinding</code></a></span></dt><dd><p>Which string the terminal should send to an application when the user
@@ -4508,6 +4544,12 @@ timeout, set it to zero.
         0
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/mako.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/mako.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mako.extraConfig"></a><a class="term" href="options.html#opt-programs.mako.extraConfig"><code class="option">programs.mako.extraConfig</code></a></span></dt><dd><p>Additional configuration.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[urgency=low]
+border-color=#b8bb26
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/mako.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/mako.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mako.font"></a><a class="term" href="options.html#opt-programs.mako.font"><code class="option">programs.mako.font</code></a></span></dt><dd><p>Font to use, in Pango format.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "monospace 10"
@@ -4732,6 +4774,11 @@ control the default matplotlib behavior.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mcfly.enableFishIntegration"></a><a class="term" href="options.html#opt-programs.mcfly.enableFishIntegration"><code class="option">programs.mcfly.enableFishIntegration</code></a></span></dt><dd><p>Whether to enable Fish integration.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mcfly.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/mcfly.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mcfly.enableFuzzySearch"></a><a class="term" href="options.html#opt-programs.mcfly.enableFuzzySearch"><code class="option">programs.mcfly.enableFuzzySearch</code></a></span></dt><dd><p>Whether to enable fuzzy searching.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mcfly.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mcfly.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mcfly.enableLightTheme"></a><a class="term" href="options.html#opt-programs.mcfly.enableLightTheme"><code class="option">programs.mcfly.enableLightTheme</code></a></span></dt><dd><p>Whether to enable light mode theme.
@@ -6119,6 +6166,32 @@ should be used whenever possible.
         400
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.pass.enable"></a><a class="term" href="options.html#opt-programs.rofi.pass.enable"><code class="option">programs.rofi.pass.enable</code></a></span></dt><dd><p>Whether to enable rofi integration with password-store.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi-pass.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.pass.extraConfig"></a><a class="term" href="options.html#opt-programs.rofi.pass.extraConfig"><code class="option">programs.rofi.pass.extraConfig</code></a></span></dt><dd><p>Extra configuration to be added at to the rofi-pass config file.
+Additional examples can be found at
+<a class="link" href="https://github.com/carnager/rofi-pass/blob/master/config.example" target="_top">https://github.com/carnager/rofi-pass/blob/master/config.example</a>.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+URL_field='url'
+USERNAME_field='user'
+AUTOTYPE_field='autotype'
+''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi-pass.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.pass.stores"></a><a class="term" href="options.html#opt-programs.rofi.pass.stores"><code class="option">programs.rofi.pass.stores</code></a></span></dt><dd><p>Directory roots of your password-stores.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi-pass.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.rowHeight"></a><a class="term" href="options.html#opt-programs.rofi.rowHeight"><code class="option">programs.rofi.rowHeight</code></a></span></dt><dd><p>Row height (in chars)</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -6630,7 +6703,12 @@ of options.
     
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
   add_newline = false;
-  prompt_order = [ "line_break" "package" "line_break" "character" ];
+  format = lib.concatStrings [
+    "$line_break"
+    "$package"
+    "$line_break"
+    "$character"
+  ];
   scan_timeout = 10;
   character.symbol = "➜";
 }
@@ -7026,6 +7104,13 @@ run at the top of your configuration.
 ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tmux.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/tmux.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.tmux.prefix"></a><a class="term" href="options.html#opt-programs.tmux.prefix"><code class="option">programs.tmux.prefix</code></a></span></dt><dd><p>Set the prefix key. Overrules the "shortcut" option when set.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "C-a"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tmux.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/tmux.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.tmux.resizeAmount"></a><a class="term" href="options.html#opt-programs.tmux.resizeAmount"><code class="option">programs.tmux.resizeAmount</code></a></span></dt><dd><p>Number of lines/columns when resizing.</p><p><span class="emphasis"><em>Type:</em></span> positive integer, meaning &gt;0</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         5
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -7246,7 +7331,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.51.1)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.52.1)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -7566,6 +7651,10 @@ focused on keyboard interaction.</p><p><span class="emphasis"><em>Type:</em></sp
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zathura.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/zathura.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zathura.package"></a><a class="term" href="options.html#opt-programs.zathura.package"><code class="option">programs.zathura.package</code></a></span></dt><dd><p>The Zathura package to use</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "pkgs.zathura"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zathura.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zathura.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zathura.extraConfig"></a><a class="term" href="options.html#opt-programs.zathura.extraConfig"><code class="option">programs.zathura.extraConfig</code></a></span></dt><dd><p>Additional commands for zathura that will be added to the
@@ -9301,6 +9390,19 @@ for more information about the format.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pasystray.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/pasystray.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pbgopy.enable"></a><a class="term" href="options.html#opt-services.pbgopy.enable"><code class="option">services.pbgopy.enable</code></a></span></dt><dd><p>Whether to enable pbgopy.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pbgopy.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pbgopy.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pbgopy.cache.ttl"></a><a class="term" href="options.html#opt-services.pbgopy.cache.ttl"><code class="option">services.pbgopy.cache.ttl</code></a></span></dt><dd><p>The TTL for the cache. Use <code class="literal">"0s"</code> to disable it.
+</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "24h"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "10m"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pbgopy.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pbgopy.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.picom.enable"></a><a class="term" href="options.html#opt-services.picom.enable"><code class="option">services.picom.enable</code></a></span></dt><dd><p>Whether to enable Picom X11 compositor.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -10286,6 +10388,32 @@ If false just the exec scripts are run.
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/xsuspender.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/xsuspender.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.mounts"></a><a class="term" href="options.html#opt-systemd.user.mounts"><code class="option">systemd.user.mounts</code></a></span></dt><dd><p>Definition of systemd per-user mount units. Attributes are
+merged recursively.
+</p><p>
+Note that the attributes follow the capitalization and naming used
+by systemd. More details can be found in
+<span class="citerefentry"><span class="refentrytitle">systemd.mount</span>(5)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> systemd mount unit configuration</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  mount-name = {
+    Unit = {
+      Description = "Example description";
+      Documentation = [ "man:example(1)" "man:example(5)" ];
+    };
+
+    Mount = {
+      …
+    };
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/systemd.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.paths"></a><a class="term" href="options.html#opt-systemd.user.paths"><code class="option">systemd.user.paths</code></a></span></dt><dd><p>Definition of systemd per-user path units. Attributes are
 merged recursively.
 </p><p>
@@ -10308,7 +10436,7 @@ by systemd. More details can be found in
     Path = {
       …
     };
-  }
+  };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
@@ -10334,13 +10462,13 @@ by systemd. More details can be found in
     Service = {
       …
     };
-  }
+  };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.servicesStartTimeoutMs"></a><a class="term" href="options.html#opt-systemd.user.servicesStartTimeoutMs"><code class="option">systemd.user.servicesStartTimeoutMs</code></a></span></dt><dd><p>How long to wait for started services to fail until their
-start is considered successful.
-</p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.servicesStartTimeoutMs"></a><a class="term" href="options.html#opt-systemd.user.servicesStartTimeoutMs"><code class="option">systemd.user.servicesStartTimeoutMs</code></a></span></dt><dd><p>How long to wait for started services to fail until their start is
+considered successful. The value 0 indicates no timeout.
+</p><p><span class="emphasis"><em>Type:</em></span> unsigned integer, meaning &gt;=0</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         0
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
@@ -10360,6 +10488,32 @@ The variable values must be as described in
         }
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/systemd.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.slices"></a><a class="term" href="options.html#opt-systemd.user.slices"><code class="option">systemd.user.slices</code></a></span></dt><dd><p>Definition of systemd per-user slices units. Attributes are
+merged recursively.
+</p><p>
+Note that the attributes follow the capitalization and naming used
+by systemd. More details can be found in
+<span class="citerefentry"><span class="refentrytitle">systemd.slices</span>(5)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> systemd slices unit configuration</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  slices-name = {
+    Unit = {
+      Description = "Example description";
+      Documentation = [ "man:example(1)" "man:example(5)" ];
+    };
+
+    Slices = {
+      …
+    };
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.sockets"></a><a class="term" href="options.html#opt-systemd.user.sockets"><code class="option">systemd.user.sockets</code></a></span></dt><dd><p>Definition of systemd per-user socket units. Attributes are
 merged recursively.
@@ -10383,15 +10537,32 @@ by systemd. More details can be found in
     Socket = {
       …
     };
-  }
+  };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.startServices"></a><a class="term" href="options.html#opt-systemd.user.startServices"><code class="option">systemd.user.startServices</code></a></span></dt><dd><p>Start all services that are wanted by active targets.
-Additionally, stop obsolete services from the previous
-generation.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.startServices"></a><a class="term" href="options.html#opt-systemd.user.startServices"><code class="option">systemd.user.startServices</code></a></span></dt><dd><p>Whether new or changed services that are wanted by active targets
+should be started. Additionally, stop obsolete services from the
+previous generation.
+</p><p>
+The alternatives are
+</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">suggest</code> (or <code class="literal">false</code>)</span></dt><dd><p>
+    Use a very simple shell script to print suggested
+    <span class="command"><strong>systemctl</strong></span> commands to run. You will have to
+    manually run those commands after the switch.
+  </p></dd><dt><span class="term"><code class="literal">legacy</code> (or <code class="literal">true</code>)</span></dt><dd><p>
+    Use a Ruby script to, in a more robust fashion, determine the
+    necessary changes and automatically run the
+    <span class="command"><strong>systemctl</strong></span> commands.
+  </p></dd><dt><span class="term"><code class="literal">sd-switch</code></span></dt><dd><p>
+    Use sd-switch, a third party application, to perform the service
+    updates. This tool offers more features while having a small
+    closure size. Note, it requires a fully functional user D-Bus
+    session. Once tested and deemed sufficiently robust, this will
+    become the default.
+  </p></dd></dl></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> boolean or one of "suggest", "legacy", "sd-switch"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "suggest"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.systemctlPath"></a><a class="term" href="options.html#opt-systemd.user.systemctlPath"><code class="option">systemd.user.systemctlPath</code></a></span></dt><dd><p>Absolute path to the <span class="command"><strong>systemctl</strong></span> tool. This
@@ -10423,7 +10594,7 @@ by systemd. More details can be found in
     Target = {
       …
     };
-  }
+  };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;
@@ -10449,7 +10620,7 @@ by systemd. More details can be found in
     Timer = {
       …
     };
-  }
+  };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/systemd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/systemd.nix&gt;

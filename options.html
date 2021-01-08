@@ -1401,6 +1401,9 @@ works both internally and externally.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-pam.sessionVariables"></a><a class="term" href="options.html#opt-pam.sessionVariables"><code class="option">pam.sessionVariables</code></a></span></dt><dd><p>Environment variables that will be set for the PAM session.
 The variable values must be as described in
 <span class="citerefentry"><span class="refentrytitle">pam_env.conf</span>(5)</span>.
+</p><p>
+Note, this option will become deprecated in the future and its use is
+therefore discouraged.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
@@ -2110,6 +2113,10 @@ Can be used to specify extensions.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.broot.enableZshIntegration"></a><a class="term" href="options.html#opt-programs.broot.enableZshIntegration"><code class="option">programs.broot.enableZshIntegration</code></a></span></dt><dd><p>Whether to enable Zsh integration.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/broot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/broot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.broot.package"></a><a class="term" href="options.html#opt-programs.broot.package"><code class="option">programs.broot.package</code></a></span></dt><dd><p>Package providing broot</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.broot
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/broot.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/broot.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.broot.skin"></a><a class="term" href="options.html#opt-programs.broot.skin"><code class="option">programs.broot.skin</code></a></span></dt><dd><p>Color configuration.
@@ -5522,7 +5529,7 @@ exclusion.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nushell.settings"></a><a class="term" href="options.html#opt-programs.nushell.settings"><code class="option">programs.nushell.settings</code></a></span></dt><dd><p>Configuration written to
 <code class="filename">~/.config/nushell/config.toml</code>.
 </p><p>
-See <a class="link" href="https://www.nushell.sh/book/en/configuration.html" target="_top">https://www.nushell.sh/book/en/configuration.html</a> for the full list
+See <a class="link" href="https://www.nushell.sh/book/configuration.html" target="_top">https://www.nushell.sh/book/configuration.html</a> for the full list
 of options.
 </p><p><span class="emphasis"><em>Type:</em></span> Nushell configuration</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
@@ -6728,7 +6735,10 @@ of options.
     "$character"
   ];
   scan_timeout = 10;
-  character.symbol = "➜";
+  character = {
+    success_symbol = "➜";
+    error_symbol = "➜";
+  };
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/starship.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/starship.nix&gt;
@@ -9631,6 +9641,18 @@ man page for more examples.
         false
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/picom.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/picom.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.plan9port.fontsrv.enable"></a><a class="term" href="options.html#opt-services.plan9port.fontsrv.enable"><code class="option">services.plan9port.fontsrv.enable</code></a></span></dt><dd><p>Whether to enable the Plan 9 file system access to host fonts.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/plan9port.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/plan9port.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.plan9port.plumber.enable"></a><a class="term" href="options.html#opt-services.plan9port.plumber.enable"><code class="option">services.plan9port.plumber.enable</code></a></span></dt><dd><p>Whether to enable the Plan 9 file system for interprocess messaging.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/plan9port.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/plan9port.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.polybar.enable"></a><a class="term" href="options.html#opt-services.polybar.enable"><code class="option">services.polybar.enable</code></a></span></dt><dd><p>Whether to enable Polybar status bar.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">

@@ -19,7 +19,9 @@ let
           inherit pkgs;
           lib = extendedLib;
           useNixpkgsModule = !cfg.useGlobalPkgs;
-        }) ++ cfg.sharedModules;
+        }) ++ [
+          { imports = cfg.sharedModules; }
+        ];
 
         config = {
           submoduleSupport.enable = true;

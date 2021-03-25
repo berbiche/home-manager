@@ -15,15 +15,13 @@ let
     } // cfg.extraSpecialArgs;
     modules = [
       ({ name, ... }: {
-        imports = import ../modules/modules.nix {
+        imports = (import ../modules/modules.nix {
           inherit pkgs;
           lib = extendedLib;
           useNixpkgsModule = !cfg.useGlobalPkgs;
-        };
+        }) ++ cfg.sharedModules;
 
         config = {
-          imports = cfg.sharedModules;
-
           submoduleSupport.enable = true;
           submoduleSupport.externalPackageInstall = cfg.useUserPackages;
 

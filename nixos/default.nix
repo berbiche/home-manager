@@ -15,13 +15,11 @@ let
     } // cfg.extraSpecialArgs;
     modules = [
       ({ name, ... }: {
-        imports = (import ../modules/modules.nix {
+        imports = import ../modules/modules.nix {
           inherit pkgs;
           lib = extendedLib;
           useNixpkgsModule = !cfg.useGlobalPkgs;
-        }) ++ [
-          { imports = cfg.sharedModules; }
-        ];
+        };
 
         config = {
           submoduleSupport.enable = true;
@@ -37,6 +35,9 @@ let
         };
       })
     ];
+    config = {
+      imports = cfg.sharedModules;
+    };
   };
 
   serviceEnvironment = optionalAttrs (cfg.backupFileExtension != null) {

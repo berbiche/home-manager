@@ -22,6 +22,8 @@ let
         };
 
         config = {
+          imports = cfg.sharedModules;
+
           submoduleSupport.enable = true;
           submoduleSupport.externalPackageInstall = cfg.useUserPackages;
 
@@ -34,7 +36,7 @@ let
           home.homeDirectory = config.users.users.${name}.home;
         };
       })
-    ] ++ cfg.sharedModules;
+    ];
   };
 
   serviceEnvironment = optionalAttrs (cfg.backupFileExtension != null) {

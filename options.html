@@ -852,9 +852,16 @@ is assumed to already be available in your profile.
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.dejavu_fonts</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/gtk.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/gtk.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-gtk.font.name"></a><a class="term" href="options.html#opt-gtk.font.name"><code class="option">gtk.font.name</code></a></span></dt><dd><p>The family name and size of the font within the package.
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-gtk.font.name"></a><a class="term" href="options.html#opt-gtk.font.name"><code class="option">gtk.font.name</code></a></span></dt><dd><p>The family name of the font within the package.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        "DejaVu Sans 8"
+        "DejaVu Sans"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/gtk.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/gtk.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-gtk.font.size"></a><a class="term" href="options.html#opt-gtk.font.size"><code class="option">gtk.font.size</code></a></span></dt><dd><p>The size of the font.
+</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "8"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/gtk.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/gtk.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-gtk.gtk2.extraConfig"></a><a class="term" href="options.html#opt-gtk.gtk2.extraConfig"><code class="option">gtk.gtk2.extraConfig</code></a></span></dt><dd><p>Extra configuration lines to add verbatim to
@@ -1951,6 +1958,12 @@ directory.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/vte.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/vte.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bash.bashrcExtra"></a><a class="term" href="options.html#opt-programs.bash.bashrcExtra"><code class="option">programs.bash.bashrcExtra</code></a></span></dt><dd><p>Extra commands that should be placed in <code class="filename">~/.bashrc</code>.
+Note that these commands will be run even in non-interactive shells.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bash.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/bash.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bash.historyControl"></a><a class="term" href="options.html#opt-programs.bash.historyControl"><code class="option">programs.bash.historyControl</code></a></span></dt><dd><p>Controlling how commands are saved on the history list.</p><p><span class="emphasis"><em>Type:</em></span> list of one of "erasedups", "ignoredups", "ignorespace"s</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
@@ -2446,6 +2459,18 @@ available packages run:
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/emacs.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/emacs.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.exa.enable"></a><a class="term" href="options.html#opt-programs.exa.enable"><code class="option">programs.exa.enable</code></a></span></dt><dd><p>Whether to enable exa, a modern replacement for <span class="command"><strong>ls</strong></span>.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/exa.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/exa.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.exa.enableAliases"></a><a class="term" href="options.html#opt-programs.exa.enableAliases"><code class="option">programs.exa.enableAliases</code></a></span></dt><dd><p>Whether to enable recommended exa aliases.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/exa.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/exa.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.feh.enable"></a><a class="term" href="options.html#opt-programs.feh.enable"><code class="option">programs.feh.enable</code></a></span></dt><dd><p>Whether to enable feh - a fast and light image viewer.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -3052,7 +3077,11 @@ every time a new commit is checked out on your repository.
         "\${pkgs.gnupg}/bin/gpg2"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/git.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.signing.key"></a><a class="term" href="options.html#opt-programs.git.signing.key"><code class="option">programs.git.signing.key</code></a></span></dt><dd><p>The default GPG signing key fingerprint.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.signing.key"></a><a class="term" href="options.html#opt-programs.git.signing.key"><code class="option">programs.git.signing.key</code></a></span></dt><dd><p>The default GPG signing key fingerprint.
+</p><p>
+Set to <code class="literal">null</code> to let GnuPG decide what signing key
+to use depending on commit’s author.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/git.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.signing.signByDefault"></a><a class="term" href="options.html#opt-programs.git.signing.signByDefault"><code class="option">programs.git.signing.signByDefault</code></a></span></dt><dd><p>Whether commits should be signed by default.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -3282,6 +3311,10 @@ or checksum database.
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gpg.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.homedir"></a><a class="term" href="options.html#opt-programs.gpg.homedir"><code class="option">programs.gpg.homedir</code></a></span></dt><dd><p>Directory to store keychains and configuration.</p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "${config.home.homeDirectory}/.gnupg"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">"${config.xdg.dataHome}/gnupg"</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.settings"></a><a class="term" href="options.html#opt-programs.gpg.settings"><code class="option">programs.gpg.settings</code></a></span></dt><dd><p>GnuPG configuration options. Available options are described
 in the gpg manpage:
@@ -4344,9 +4377,16 @@ is assumed to already be available in your profile.
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.dejavu_fonts</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/kitty.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.font.name"></a><a class="term" href="options.html#opt-programs.kitty.font.name"><code class="option">programs.kitty.font.name</code></a></span></dt><dd><p>The family name and size of the font within the package.
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.font.name"></a><a class="term" href="options.html#opt-programs.kitty.font.name"><code class="option">programs.kitty.font.name</code></a></span></dt><dd><p>The family name of the font within the package.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        "DejaVu Sans 8"
+        "DejaVu Sans"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/kitty.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.font.size"></a><a class="term" href="options.html#opt-programs.kitty.font.size"><code class="option">programs.kitty.font.size</code></a></span></dt><dd><p>The size of the font.
+</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "8"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/kitty.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.keybindings"></a><a class="term" href="options.html#opt-programs.kitty.keybindings"><code class="option">programs.kitty.keybindings</code></a></span></dt><dd><p>Mapping of keybindings to actions.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -4891,7 +4931,7 @@ control the default matplotlib behavior.
                     &lt;home-manager/modules/programs/mpv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.package"></a><a class="term" href="options.html#opt-programs.mpv.package"><code class="option">programs.mpv.package</code></a></span></dt><dd><p>Package providing mpv.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of mpv-with-scripts-0.33.0)</code></em>
+        <em class="replaceable"><code>(build of mpv-with-scripts-0.33.1)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mpv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.bindings"></a><a class="term" href="options.html#opt-programs.mpv.bindings"><code class="option">programs.mpv.bindings</code></a></span></dt><dd><p>Input configuration written to
@@ -4978,6 +5018,12 @@ by options set in <a class="xref" href="options.html#opt-programs.mpv.config"><c
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/msmtp.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/msmtp.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.msmtp.extraAccounts"></a><a class="term" href="options.html#opt-programs.msmtp.extraAccounts"><code class="option">programs.msmtp.extraAccounts</code></a></span></dt><dd><p>Extra configuration lines to add to the end of <code class="filename">~/.msmtprc</code>.
+See <a class="link" href="https://marlam.de/msmtp/msmtprc.txt" target="_top">https://marlam.de/msmtp/msmtprc.txt</a> for examples.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/msmtp.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/msmtp.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.msmtp.extraConfig"></a><a class="term" href="options.html#opt-programs.msmtp.extraConfig"><code class="option">programs.msmtp.extraConfig</code></a></span></dt><dd><p>Extra configuration lines to add to <code class="filename">~/.msmtprc</code>.
@@ -5128,7 +5174,7 @@ csh  1  ^#!\s*/.*\b(csh|tcsh)\s*
         "&lt;left&gt;"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.binds._.map"></a><a class="term" href="options.html#opt-programs.neomutt.binds._.map"><code class="option">programs.neomutt.binds.*.map</code></a></span></dt><dd><p>Select the menu to bind the command to.</p><p><span class="emphasis"><em>Type:</em></span> one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.binds._.map"></a><a class="term" href="options.html#opt-programs.neomutt.binds._.map"><code class="option">programs.neomutt.binds.*.map</code></a></span></dt><dd><p>Select the menu to bind the command to.</p><p><span class="emphasis"><em>Type:</em></span> one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime" or list of one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime"s</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "index"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
@@ -5162,7 +5208,7 @@ csh  1  ^#!\s*/.*\b(csh|tcsh)\s*
         "&lt;left&gt;"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.macros._.map"></a><a class="term" href="options.html#opt-programs.neomutt.macros._.map"><code class="option">programs.neomutt.macros.*.map</code></a></span></dt><dd><p>Select the menu to bind the command to.</p><p><span class="emphasis"><em>Type:</em></span> one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.macros._.map"></a><a class="term" href="options.html#opt-programs.neomutt.macros._.map"><code class="option">programs.neomutt.macros.*.map</code></a></span></dt><dd><p>Select the menu to bind the command to.</p><p><span class="emphasis"><em>Type:</em></span> one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime" or list of one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime"s</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "index"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
@@ -5810,6 +5856,15 @@ documentation for details.
         "473"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/pet.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/pet.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.pet.snippets._.tag"></a><a class="term" href="options.html#opt-programs.pet.snippets._.tag"><code class="option">programs.pet.snippets.*.tag</code></a></span></dt><dd><p>List of tags attached to the command.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">["git" "nixpkgs"]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/pet.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/pet.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.pidgin.enable"></a><a class="term" href="options.html#opt-programs.pidgin.enable"><code class="option">programs.pidgin.enable</code></a></span></dt><dd><p>Whether to enable Pidgin messaging client.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -6425,6 +6480,27 @@ the repository.
                     &lt;home-manager/modules/programs/sbt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.version"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.version"><code class="option">programs.sbt.plugins.*.version</code></a></span></dt><dd><p>The version of the plugin.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.enable"></a><a class="term" href="options.html#opt-programs.scmpuff.enable"><code class="option">programs.scmpuff.enable</code></a></span></dt><dd><p>Whether to enable scmpuff, a command line tool that allows you to work quicker with Git by
+substituting numeric shortcuts for files.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/scmpuff.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/scmpuff.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.enableBashIntegration"></a><a class="term" href="options.html#opt-programs.scmpuff.enableBashIntegration"><code class="option">programs.scmpuff.enableBashIntegration</code></a></span></dt><dd><p>Whether to enable Bash integration.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/scmpuff.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/scmpuff.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.enableZshIntegration"></a><a class="term" href="options.html#opt-programs.scmpuff.enableZshIntegration"><code class="option">programs.scmpuff.enableZshIntegration</code></a></span></dt><dd><p>Whether to enable Zsh integration.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/scmpuff.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/scmpuff.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.package"></a><a class="term" href="options.html#opt-programs.scmpuff.package"><code class="option">programs.scmpuff.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>scmpuff</strong></span> tool.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.gitAndTools.scmpuff
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/scmpuff.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/scmpuff.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.skim.enable"></a><a class="term" href="options.html#opt-programs.skim.enable"><code class="option">programs.skim.enable</code></a></span></dt><dd><p>Whether to enable skim - a command-line fuzzy finder.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -6940,6 +7016,12 @@ Home Manager will attempt to create this directory.
                     &lt;home-manager/modules/programs/taskwarrior.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.termite.enable"></a><a class="term" href="options.html#opt-programs.termite.enable"><code class="option">programs.termite.enable</code></a></span></dt><dd><p>Whether to enable Termite VTE-based terminal.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/termite.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/termite.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.termite.enableVteIntegration"></a><a class="term" href="options.html#opt-programs.termite.enableVteIntegration"><code class="option">programs.termite.enableVteIntegration</code></a></span></dt><dd><p>Whether to enable Shell VTE integration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/termite.nix#blob-path" target="_top">
@@ -7505,7 +7587,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.54.3)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.55.2)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -8678,6 +8760,10 @@ percent symbol).
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/dunst.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.package"></a><a class="term" href="options.html#opt-services.dunst.package"><code class="option">services.dunst.package</code></a></span></dt><dd><p>Package providing <span class="command"><strong>dunst</strong></span>.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.dunst
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/dunst.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.iconTheme"></a><a class="term" href="options.html#opt-services.dunst.iconTheme"><code class="option">services.dunst.iconTheme</code></a></span></dt><dd><p>Set the icon theme.</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
@@ -8719,6 +8805,10 @@ percent symbol).
   };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/dunst.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.waylandDisplay"></a><a class="term" href="options.html#opt-services.dunst.waylandDisplay"><code class="option">services.dunst.waylandDisplay</code></a></span></dt><dd><p>Set the service's <code class="envar">WAYLAND_DISPLAY</code> environment variable.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/dunst.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dwm-status.enable"></a><a class="term" href="options.html#opt-services.dwm-status.enable"><code class="option">services.dwm-status.enable</code></a></span></dt><dd><p>Whether to enable dwm-status user service.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -9575,6 +9665,12 @@ special characters including spaces may need to be escaped.
         pkgs.parcellite
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.clipit</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/parcellite.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/parcellite.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pass-secret-service.enable"></a><a class="term" href="options.html#opt-services.pass-secret-service.enable"><code class="option">services.pass-secret-service.enable</code></a></span></dt><dd><p>Whether to enable Pass libsecret service.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pass-secret-service.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pass-secret-service.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.password-store-sync.enable"></a><a class="term" href="options.html#opt-services.password-store-sync.enable"><code class="option">services.password-store-sync.enable</code></a></span></dt><dd><p>Whether to enable Password store periodic sync.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -11396,7 +11492,9 @@ on workspace with a single container.
         5
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.input"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.input"><code class="option">wayland.windowManager.sway.config.input</code></a></span></dt><dd><p>An attribute set that defines input modules. See man sway_input for options.
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.input"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.input"><code class="option">wayland.windowManager.sway.config.input</code></a></span></dt><dd><p>An attribute set that defines input modules. See
+<span class="citerefentry"><span class="refentrytitle">sway-input</span>(5)</span>
+for options.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
@@ -11480,7 +11578,9 @@ for more advanced setup use 'sway.extraConfig'.
         "Mod4"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.output"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.output"><code class="option">wayland.windowManager.sway.config.output</code></a></span></dt><dd><p>An attribute set that defines output modules. See man sway_output for options.
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.output"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.output"><code class="option">wayland.windowManager.sway.config.output</code></a></span></dt><dd><p>An attribute set that defines output modules. See
+<span class="citerefentry"><span class="refentrytitle">sway-output</span>(5)</span>
+for options.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
@@ -11501,6 +11601,27 @@ for more advanced setup use 'sway.extraConfig'.
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.right"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.right"><code class="option">wayland.windowManager.sway.config.right</code></a></span></dt><dd><p>Home row direction key for moving right.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "l"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.seat"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.seat"><code class="option">wayland.windowManager.sway.config.seat</code></a></span></dt><dd><p>An attribute set that defines seat modules. See
+<span class="citerefentry"><span class="refentrytitle">sway-input</span>(5)</span>
+for options.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        {
+        * = 
+        {
+        hide_cursor = "when-typing enable"; 
+        }
+    ; 
+        }
+    
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.startup"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.startup"><code class="option">wayland.windowManager.sway.config.startup</code></a></span></dt><dd><p>Commands that should be executed at startup.
@@ -11893,6 +12014,12 @@ the list is attempted, and so on.
 The generated file is read-only.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-user-dirs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg-user-dirs.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.userDirs.createDirectories"></a><a class="term" href="options.html#opt-xdg.userDirs.createDirectories"><code class="option">xdg.userDirs.createDirectories</code></a></span></dt><dd><p>Whether to enable automatic creation of the XDG user directories.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-user-dirs.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg-user-dirs.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.userDirs.desktop"></a><a class="term" href="options.html#opt-xdg.userDirs.desktop"><code class="option">xdg.userDirs.desktop</code></a></span></dt><dd><p>The Desktop directory.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">

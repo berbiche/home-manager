@@ -2780,6 +2780,45 @@ initialisation.
         ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/fish.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.foot.enable"></a><a class="term" href="options.html#opt-programs.foot.enable"><code class="option">programs.foot.enable</code></a></span></dt><dd><p>Whether to enable Foot terminal.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/foot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/foot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.foot.package"></a><a class="term" href="options.html#opt-programs.foot.package"><code class="option">programs.foot.package</code></a></span></dt><dd><p>The foot package to install</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.foot
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/foot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/foot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.foot.server.enable"></a><a class="term" href="options.html#opt-programs.foot.server.enable"><code class="option">programs.foot.server.enable</code></a></span></dt><dd><p>Whether to enable Foot terminal server.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/foot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/foot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.foot.settings"></a><a class="term" href="options.html#opt-programs.foot.settings"><code class="option">programs.foot.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/foot/foot.ini</code>. See <a class="link" href="https://codeberg.org/dnkl/foot/src/branch/master/foot.ini" target="_top">https://codeberg.org/dnkl/foot/src/branch/master/foot.ini</a>
+for a list of available options.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of INI atom (null, bool, int, float or string)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  main = {
+    term = "xterm-256color";
+
+    font = "Fira Code:size=11";
+    dpi-aware = "yes";
+  };
+
+  mouse = {
+    hide-when-typing = "yes";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/foot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/foot.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fzf.enable"></a><a class="term" href="options.html#opt-programs.fzf.enable"><code class="option">programs.fzf.enable</code></a></span></dt><dd><p>Whether to enable fzf - a command-line fuzzy finder.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -3383,40 +3422,57 @@ attempted.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.enableMouse"></a><a class="term" href="options.html#opt-programs.htop.enableMouse"><code class="option">programs.htop.enableMouse</code></a></span></dt><dd><p>Enable mouse support.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.enableMouse"></a><a class="term" href="options.html#opt-programs.htop.enableMouse"><code class="option">programs.htop.enableMouse</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.enable_mouse instead.
+
+Enable mouse support.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.accountGuestInCpuMeter"></a><a class="term" href="options.html#opt-programs.htop.accountGuestInCpuMeter"><code class="option">programs.htop.accountGuestInCpuMeter</code></a></span></dt><dd><p>Add guest time in CPU meter percentage.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.accountGuestInCpuMeter"></a><a class="term" href="options.html#opt-programs.htop.accountGuestInCpuMeter"><code class="option">programs.htop.accountGuestInCpuMeter</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.account_guest_in_cpu_meter instead.
+
+Add guest time in CPU meter percentage.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.colorScheme"></a><a class="term" href="options.html#opt-programs.htop.colorScheme"><code class="option">programs.htop.colorScheme</code></a></span></dt><dd><p>Which color scheme to use.</p><p><span class="emphasis"><em>Type:</em></span> one of 0, 1, 2, 3, 4, 5, 6</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        0
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.colorScheme"></a><a class="term" href="options.html#opt-programs.htop.colorScheme"><code class="option">programs.htop.colorScheme</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.color_scheme instead.
+
+Which color scheme to use.
+</p><p><span class="emphasis"><em>Type:</em></span> null or one of 0, 1, 2, 3, 4, 5, 6</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         6
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.cpuCountFromZero"></a><a class="term" href="options.html#opt-programs.htop.cpuCountFromZero"><code class="option">programs.htop.cpuCountFromZero</code></a></span></dt><dd><p>Count CPUs from 0 instead of 1.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.cpuCountFromZero"></a><a class="term" href="options.html#opt-programs.htop.cpuCountFromZero"><code class="option">programs.htop.cpuCountFromZero</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.cpu_count_from_zero instead.
+
+Count CPUs from 0 instead of 1.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.delay"></a><a class="term" href="options.html#opt-programs.htop.delay"><code class="option">programs.htop.delay</code></a></span></dt><dd><p>Set the delay between updates, in tenths of seconds.</p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        15
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.delay"></a><a class="term" href="options.html#opt-programs.htop.delay"><code class="option">programs.htop.delay</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.delay instead.
+
+Set the delay between updates, in tenths of seconds.
+</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         2
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.detailedCpuTime"></a><a class="term" href="options.html#opt-programs.htop.detailedCpuTime"><code class="option">programs.htop.detailedCpuTime</code></a></span></dt><dd><p>Detailed CPU time (System/IO-Wait/Hard-IRQ/Soft-IRQ/Steal/Guest).</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.detailedCpuTime"></a><a class="term" href="options.html#opt-programs.htop.detailedCpuTime"><code class="option">programs.htop.detailedCpuTime</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.detailed_cpu_time instead.
+
+Detailed CPU time (System/IO-Wait/Hard-IRQ/Soft-IRQ/Steal/Guest).
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.fields"></a><a class="term" href="options.html#opt-programs.htop.fields"><code class="option">programs.htop.fields</code></a></span></dt><dd><p>Active fields shown in the table.</p><p><span class="emphasis"><em>Type:</em></span> list of one of "CGROUP", "CMAJFLT", "CMINFLT", "CNCLWB", "COMM", "CSTIME", "CTID", "CUTIME", "IO_PRIORITY", "IO_RATE", "IO_READ_RATE", "IO_WRITE_RATE", "MAJFLT", "MINFLT", "M_DRS", "M_DT", "M_LRS", "M_PSS", "M_PSSWP", "M_RESIDENT", "M_SHARE", "M_SIZE", "M_SWAP", "M_TRS", "NICE", "NLWP", "OOM", "PERCENT_CPU", "PERCENT_MEM", "PGRP", "PID", "PPID", "PRIORITY", "PROCESSOR", "RBYTES", "RCHAR", "SESSION", "STARTTIME", "STATE", "STIME", "ST_UID", "SYSCR", "SYSCW", "TGID", "TIME", "TPGID", "TTY_NR", "USER", "UTIME", "VPID", "VXID", "WBYTES", "WCHAR"s</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        "PID" "USER" "PRIORITY" "NICE" "M_SIZE" "M_RESIDENT" "M_SHARE" "STATE" "PERCENT_CPU" "PERCENT_MEM" "TIME" "COMM" 
-        ]
-    
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.fields"></a><a class="term" href="options.html#opt-programs.htop.fields"><code class="option">programs.htop.fields</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.fields instead.
+
+Active fields shown in the table.
+</p><p><span class="emphasis"><em>Type:</em></span> null or list of one of "CGROUP", "CMAJFLT", "CMINFLT", "CNCLWB", "COMM", "CSTIME", "CTID", "CUTIME", "IO_PRIORITY", "IO_RATE", "IO_READ_RATE", "IO_WRITE_RATE", "MAJFLT", "MINFLT", "M_DRS", "M_DT", "M_LRS", "M_PSS", "M_PSSWP", "M_RESIDENT", "M_SHARE", "M_SIZE", "M_SWAP", "M_TRS", "NICE", "NLWP", "OOM", "PERCENT_CPU", "PERCENT_MEM", "PGRP", "PID", "PPID", "PRIORITY", "PROCESSOR", "RBYTES", "RCHAR", "SESSION", "STARTTIME", "STATE", "STIME", "ST_UID", "SYSCR", "SYSCW", "TGID", "TIME", "TPGID", "TTY_NR", "USER", "UTIME", "VPID", "VXID", "WBYTES", "WCHAR"s</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         
         [
@@ -3425,48 +3481,64 @@ attempted.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.headerMargin"></a><a class="term" href="options.html#opt-programs.htop.headerMargin"><code class="option">programs.htop.headerMargin</code></a></span></dt><dd><p>Leave a margin around header.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.headerMargin"></a><a class="term" href="options.html#opt-programs.htop.headerMargin"><code class="option">programs.htop.headerMargin</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.header_margin instead.
+
+Leave a margin around header.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.hideKernelThreads"></a><a class="term" href="options.html#opt-programs.htop.hideKernelThreads"><code class="option">programs.htop.hideKernelThreads</code></a></span></dt><dd><p>Hide kernel threads.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.hideKernelThreads"></a><a class="term" href="options.html#opt-programs.htop.hideKernelThreads"><code class="option">programs.htop.hideKernelThreads</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.hide_kernel_threads instead.
+
+Hide kernel threads.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.hideThreads"></a><a class="term" href="options.html#opt-programs.htop.hideThreads"><code class="option">programs.htop.hideThreads</code></a></span></dt><dd><p>Hide threads.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.hideThreads"></a><a class="term" href="options.html#opt-programs.htop.hideThreads"><code class="option">programs.htop.hideThreads</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.hide_threads instead.
+
+Hide threads.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.hideUserlandThreads"></a><a class="term" href="options.html#opt-programs.htop.hideUserlandThreads"><code class="option">programs.htop.hideUserlandThreads</code></a></span></dt><dd><p>Hide userland process threads.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.hideUserlandThreads"></a><a class="term" href="options.html#opt-programs.htop.hideUserlandThreads"><code class="option">programs.htop.hideUserlandThreads</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.hide_userland_threads instead.
+
+Hide userland process threads.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.highlightBaseName"></a><a class="term" href="options.html#opt-programs.htop.highlightBaseName"><code class="option">programs.htop.highlightBaseName</code></a></span></dt><dd><p>Highlight program <span class="quote">“<span class="quote">basename</span>”</span>.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.highlightBaseName"></a><a class="term" href="options.html#opt-programs.htop.highlightBaseName"><code class="option">programs.htop.highlightBaseName</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.highlight_base_name instead.
+
+Highlight program <span class="quote">“<span class="quote">basename</span>”</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.highlightMegabytes"></a><a class="term" href="options.html#opt-programs.htop.highlightMegabytes"><code class="option">programs.htop.highlightMegabytes</code></a></span></dt><dd><p>Highlight large numbers in memory counters.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.highlightMegabytes"></a><a class="term" href="options.html#opt-programs.htop.highlightMegabytes"><code class="option">programs.htop.highlightMegabytes</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.highlight_megabytes instead.
+
+Highlight large numbers in memory counters.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.highlightThreads"></a><a class="term" href="options.html#opt-programs.htop.highlightThreads"><code class="option">programs.htop.highlightThreads</code></a></span></dt><dd><p>Display threads in a different color.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.highlightThreads"></a><a class="term" href="options.html#opt-programs.htop.highlightThreads"><code class="option">programs.htop.highlightThreads</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.highlight_threads instead.
+
+Display threads in a different color.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters"></a><a class="term" href="options.html#opt-programs.htop.meters"><code class="option">programs.htop.meters</code></a></span></dt><dd><p>Meters shown in the header.</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        {
-        left = 
-        [
-        "AllCPUs" "Memory" "Swap" 
-        ]
-    ; right = 
-        [
-        "Tasks" "LoadAverage" "Uptime" 
-        ]
-    ; 
-        }
-    
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters"></a><a class="term" href="options.html#opt-programs.htop.meters"><code class="option">programs.htop.meters</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.left_meters,
+programs.htop.settings.left_meter_modes,
+programs.htop.settings.right_meters and
+programs.htop.settings.right_meter_modes instead. Or consider using
+lib.htop.leftMeters and lib.htop.rightMeters.
+
+Meters shown in the header.
+</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         
         {
@@ -3495,7 +3567,7 @@ attempted.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.left"></a><a class="term" href="options.html#opt-programs.htop.meters.left"><code class="option">programs.htop.meters.left</code></a></span></dt><dd><p>Meters shown in the left header.</p><p><span class="emphasis"><em>Type:</em></span> list of submodule or one of "AllCPUs", "AllCPUs2", "AllCPUs4", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Hostname", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "Load", "LoadAverage", "Memory", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "Swap", "Tasks", "Uptime", "ZFSARC", "ZFSCARC" convertible to its</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.left"></a><a class="term" href="options.html#opt-programs.htop.meters.left"><code class="option">programs.htop.meters.left</code></a></span></dt><dd><p>Meters shown in the left header.</p><p><span class="emphasis"><em>Type:</em></span> list of submodule or one of "AllCPUs", "AllCPUs2", "AllCPUs4", "AllCPUs8", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Date", "DateTime", "DiskIO", "Hostname", "HugePages", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "LeftCPUs8", "Load", "LoadAverage", "Memory", "NetworkIO", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "RightCPUs8", "SELinux", "Swap", "Systemd", "Tasks", "Uptime", "ZFSARC", "ZFSCARC", "Zram" convertible to its</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
         "AllCPUs" "Memory" "Swap" 
@@ -3513,7 +3585,7 @@ attempted.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.left._.kind"></a><a class="term" href="options.html#opt-programs.htop.meters.left._.kind"><code class="option">programs.htop.meters.left.*.kind</code></a></span></dt><dd><p>What kind of meter.</p><p><span class="emphasis"><em>Type:</em></span> one of "AllCPUs", "AllCPUs2", "AllCPUs4", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Hostname", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "Load", "LoadAverage", "Memory", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "Swap", "Tasks", "Uptime", "ZFSARC", "ZFSCARC"</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.left._.kind"></a><a class="term" href="options.html#opt-programs.htop.meters.left._.kind"><code class="option">programs.htop.meters.left.*.kind</code></a></span></dt><dd><p>What kind of meter.</p><p><span class="emphasis"><em>Type:</em></span> one of "AllCPUs", "AllCPUs2", "AllCPUs4", "AllCPUs8", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Date", "DateTime", "DiskIO", "Hostname", "HugePages", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "LeftCPUs8", "Load", "LoadAverage", "Memory", "NetworkIO", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "RightCPUs8", "SELinux", "Swap", "Systemd", "Tasks", "Uptime", "ZFSARC", "ZFSCARC", "Zram"</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "AllCPUs"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
@@ -3521,7 +3593,7 @@ attempted.
         2
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.right"></a><a class="term" href="options.html#opt-programs.htop.meters.right"><code class="option">programs.htop.meters.right</code></a></span></dt><dd><p>Meters shown in the right header.</p><p><span class="emphasis"><em>Type:</em></span> list of submodule or one of "AllCPUs", "AllCPUs2", "AllCPUs4", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Hostname", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "Load", "LoadAverage", "Memory", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "Swap", "Tasks", "Uptime", "ZFSARC", "ZFSCARC" convertible to its</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.right"></a><a class="term" href="options.html#opt-programs.htop.meters.right"><code class="option">programs.htop.meters.right</code></a></span></dt><dd><p>Meters shown in the right header.</p><p><span class="emphasis"><em>Type:</em></span> list of submodule or one of "AllCPUs", "AllCPUs2", "AllCPUs4", "AllCPUs8", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Date", "DateTime", "DiskIO", "Hostname", "HugePages", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "LeftCPUs8", "Load", "LoadAverage", "Memory", "NetworkIO", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "RightCPUs8", "SELinux", "Swap", "Systemd", "Tasks", "Uptime", "ZFSARC", "ZFSCARC", "Zram" convertible to its</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
         "Tasks" "LoadAverage" "Uptime" 
@@ -3539,7 +3611,7 @@ attempted.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.right._.kind"></a><a class="term" href="options.html#opt-programs.htop.meters.right._.kind"><code class="option">programs.htop.meters.right.*.kind</code></a></span></dt><dd><p>What kind of meter.</p><p><span class="emphasis"><em>Type:</em></span> one of "AllCPUs", "AllCPUs2", "AllCPUs4", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Hostname", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "Load", "LoadAverage", "Memory", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "Swap", "Tasks", "Uptime", "ZFSARC", "ZFSCARC"</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.meters.right._.kind"></a><a class="term" href="options.html#opt-programs.htop.meters.right._.kind"><code class="option">programs.htop.meters.right.*.kind</code></a></span></dt><dd><p>What kind of meter.</p><p><span class="emphasis"><em>Type:</em></span> one of "AllCPUs", "AllCPUs2", "AllCPUs4", "AllCPUs8", "Battery", "Blank", "CPU", "CPU(1)", "CPU(2)", "CPU(3)", "CPU(4)", "CPU(5)", "CPU(6)", "CPU(7)", "CPU(8)", "CPUs", "Clock", "Date", "DateTime", "DiskIO", "Hostname", "HugePages", "LeftCPUs", "LeftCPUs2", "LeftCPUs4", "LeftCPUs8", "Load", "LoadAverage", "Memory", "NetworkIO", "PressureStallCPUSome", "PressureStallIOFull", "PressureStallIOSome", "PressureStallMemoryFull", "PressureStallMemorySome", "Right", "RightCPUs", "RightCPUs2", "RightCPUs4", "RightCPUs8", "SELinux", "Swap", "Systemd", "Tasks", "Uptime", "ZFSARC", "ZFSCARC", "Zram"</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "AllCPUs"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
@@ -3547,46 +3619,140 @@ attempted.
         2
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.shadowOtherUsers"></a><a class="term" href="options.html#opt-programs.htop.shadowOtherUsers"><code class="option">programs.htop.shadowOtherUsers</code></a></span></dt><dd><p>Shadow other users' processes.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.settings"></a><a class="term" href="options.html#opt-programs.htop.settings"><code class="option">programs.htop.settings</code></a></span></dt><dd><p>Configuration options to add to
+<code class="filename">~/.config/htop/htoprc</code>.
+
+This superseedes any other (deprecated) settings in this module.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        account_guest_in_cpu_meter = false; color_scheme = 0; cpu_count_from_zero = false; delay = 15; detailed_cpu_time = false; enable_mouse = true; fields = 
+        [
+        0 48 17 18 38 39 40 2 46 47 49 1 
+        ]
+    ; header_margin = true; hide_kernel_threads = true; hide_threads = false; hide_userland_threads = false; highlight_base_name = false; highlight_megabytes = true; highlight_threads = true; left_meter_modes = 
+        [
+        1 1 1 
+        ]
+    ; left_meters = 
+        [
+        "AllCPUs" "Memory" "Swap" 
+        ]
+    ; right_meter_modes = 
+        [
+        2 2 2 
+        ]
+    ; right_meters = 
+        [
+        "LoadAverage" "Tasks" "Uptime" 
+        ]
+    ; shadow_other_users = false; show_cpu_frequency = false; show_cpu_usage = false; show_program_path = true; show_thread_names = false; sort_direction = 1; sort_key = 46; tree_view = false; update_process_names = false; vim_mode = false; 
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  color_scheme = 6;
+  cpu_count_from_one = 0;
+  delay = 15;
+  fields = with config.lib.htop.fields; [
+    PID
+    USER
+    PRIORITY
+    NICE
+    M_SIZE
+    M_RESIDENT
+    M_SHARE
+    STATE
+    PERCENT_CPU
+    PERCENT_MEM
+    TIME
+    COMM
+  ];
+  highlight_base_name = 1;
+  highlight_megabytes = 1;
+  highlight_threads = 1;
+} // (with config.lib.htop; leftMeters {
+  AllCPUs2 = modes.Bar;
+  Memory = modes.Bar;
+  Swap = modes.Bar;
+  Zram = modes.Text;
+}) // (with config.lib.htop; rightMeters {
+  Tasks = modes.Text;
+  LoadAverage = modes.Text;
+  Uptime = modes.Text;
+  Systemd = modes.Text;
+})
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/htop.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.shadowOtherUsers"></a><a class="term" href="options.html#opt-programs.htop.shadowOtherUsers"><code class="option">programs.htop.shadowOtherUsers</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.shadow_other_users instead.
+
+Shadow other users' processes.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showCpuFrequency"></a><a class="term" href="options.html#opt-programs.htop.showCpuFrequency"><code class="option">programs.htop.showCpuFrequency</code></a></span></dt><dd><p>Show CPU frequency.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showCpuFrequency"></a><a class="term" href="options.html#opt-programs.htop.showCpuFrequency"><code class="option">programs.htop.showCpuFrequency</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.show_cpu_frequency instead.
+
+Show CPU frequency.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showCpuUsage"></a><a class="term" href="options.html#opt-programs.htop.showCpuUsage"><code class="option">programs.htop.showCpuUsage</code></a></span></dt><dd><p>Show CPU usage frequency.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showCpuUsage"></a><a class="term" href="options.html#opt-programs.htop.showCpuUsage"><code class="option">programs.htop.showCpuUsage</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.show_cpu_usage instead.
+
+Show CPU usage frequency.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showProgramPath"></a><a class="term" href="options.html#opt-programs.htop.showProgramPath"><code class="option">programs.htop.showProgramPath</code></a></span></dt><dd><p>Show program path.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showProgramPath"></a><a class="term" href="options.html#opt-programs.htop.showProgramPath"><code class="option">programs.htop.showProgramPath</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.show_program_path instead.
+
+Show program path.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showThreadNames"></a><a class="term" href="options.html#opt-programs.htop.showThreadNames"><code class="option">programs.htop.showThreadNames</code></a></span></dt><dd><p>Show custom thread names.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.showThreadNames"></a><a class="term" href="options.html#opt-programs.htop.showThreadNames"><code class="option">programs.htop.showThreadNames</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.show_thread_names instead.
+
+Show custom thread names.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.sortDescending"></a><a class="term" href="options.html#opt-programs.htop.sortDescending"><code class="option">programs.htop.sortDescending</code></a></span></dt><dd><p>Whether to sort descending or not.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.sortDescending"></a><a class="term" href="options.html#opt-programs.htop.sortDescending"><code class="option">programs.htop.sortDescending</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.sort_direction instead.
+
+Whether to sort descending or not.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.sortKey"></a><a class="term" href="options.html#opt-programs.htop.sortKey"><code class="option">programs.htop.sortKey</code></a></span></dt><dd><p>Which field to use for sorting.</p><p><span class="emphasis"><em>Type:</em></span> one of "CGROUP", "CMAJFLT", "CMINFLT", "CNCLWB", "COMM", "CSTIME", "CTID", "CUTIME", "IO_PRIORITY", "IO_RATE", "IO_READ_RATE", "IO_WRITE_RATE", "MAJFLT", "MINFLT", "M_DRS", "M_DT", "M_LRS", "M_PSS", "M_PSSWP", "M_RESIDENT", "M_SHARE", "M_SIZE", "M_SWAP", "M_TRS", "NICE", "NLWP", "OOM", "PERCENT_CPU", "PERCENT_MEM", "PGRP", "PID", "PPID", "PRIORITY", "PROCESSOR", "RBYTES", "RCHAR", "SESSION", "STARTTIME", "STATE", "STIME", "ST_UID", "SYSCR", "SYSCW", "TGID", "TIME", "TPGID", "TTY_NR", "USER", "UTIME", "VPID", "VXID", "WBYTES", "WCHAR"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "PERCENT_CPU"
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.sortKey"></a><a class="term" href="options.html#opt-programs.htop.sortKey"><code class="option">programs.htop.sortKey</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.sort_key instead.
+
+Which field to use for sorting.
+</p><p><span class="emphasis"><em>Type:</em></span> null or one of "CGROUP", "CMAJFLT", "CMINFLT", "CNCLWB", "COMM", "CSTIME", "CTID", "CUTIME", "IO_PRIORITY", "IO_RATE", "IO_READ_RATE", "IO_WRITE_RATE", "MAJFLT", "MINFLT", "M_DRS", "M_DT", "M_LRS", "M_PSS", "M_PSSWP", "M_RESIDENT", "M_SHARE", "M_SIZE", "M_SWAP", "M_TRS", "NICE", "NLWP", "OOM", "PERCENT_CPU", "PERCENT_MEM", "PGRP", "PID", "PPID", "PRIORITY", "PROCESSOR", "RBYTES", "RCHAR", "SESSION", "STARTTIME", "STATE", "STIME", "ST_UID", "SYSCR", "SYSCW", "TGID", "TIME", "TPGID", "TTY_NR", "USER", "UTIME", "VPID", "VXID", "WBYTES", "WCHAR"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "TIME"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.treeView"></a><a class="term" href="options.html#opt-programs.htop.treeView"><code class="option">programs.htop.treeView</code></a></span></dt><dd><p>Tree view.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.treeView"></a><a class="term" href="options.html#opt-programs.htop.treeView"><code class="option">programs.htop.treeView</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.tree_view instead.
+
+Tree view.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.updateProcessNames"></a><a class="term" href="options.html#opt-programs.htop.updateProcessNames"><code class="option">programs.htop.updateProcessNames</code></a></span></dt><dd><p>Update process names on every refresh.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.updateProcessNames"></a><a class="term" href="options.html#opt-programs.htop.updateProcessNames"><code class="option">programs.htop.updateProcessNames</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.update_process_names instead.
+
+Update process names on every refresh.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.vimMode"></a><a class="term" href="options.html#opt-programs.htop.vimMode"><code class="option">programs.htop.vimMode</code></a></span></dt><dd><p>Vim key bindings.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.htop.vimMode"></a><a class="term" href="options.html#opt-programs.htop.vimMode"><code class="option">programs.htop.vimMode</code></a></span></dt><dd><p>Deprecated. Please use programs.htop.settings.vim_mode instead.
+
+Vim key bindings.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/htop.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/htop.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.i3status.enable"></a><a class="term" href="options.html#opt-programs.i3status.enable"><code class="option">programs.i3status.enable</code></a></span></dt><dd><p>Whether to enable i3status.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -3832,7 +3998,7 @@ for block options.
     on_click = "pavucontrol --tab=3";
     mappings = {
      "alsa_output.pci-0000_00_1f.3.analog-stereo" = "";
-     "bluez_sink.70_26_05_DA_27_A4.a2dp_sink" = ""
+     "bluez_sink.70_26_05_DA_27_A4.a2dp_sink" = "";
     };
   }
 ];
@@ -6610,7 +6776,7 @@ substituting numeric shortcuts for files.</p><p><span class="emphasis"><em>Type:
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/scmpuff.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/scmpuff.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.package"></a><a class="term" href="options.html#opt-programs.scmpuff.package"><code class="option">programs.scmpuff.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>scmpuff</strong></span> tool.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        pkgs.gitAndTools.scmpuff
+        pkgs.scmpuff
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/scmpuff.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/scmpuff.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.skim.enable"></a><a class="term" href="options.html#opt-programs.skim.enable"><code class="option">programs.skim.enable</code></a></span></dt><dd><p>Whether to enable skim - a command-line fuzzy finder.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -7744,7 +7910,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.55.2)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.56.2)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -9490,7 +9656,25 @@ configuration file.
         
         }
     
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/kanshi.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">undocked = {
+  outputs = [
+    {
+      criteria = "eDP-1";
+    }
+  ];
+};
+docked = {
+  outputs = [
+    {
+      criteria = "eDP-1";
+    }
+    {
+      criteria = "Some Company ASDF 4242";
+      transform = "90";
+    }
+  ];
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/kanshi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/kanshi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.kanshi.profiles._name_.exec"></a><a class="term" href="options.html#opt-services.kanshi.profiles._name_.exec"><code class="option">services.kanshi.profiles.&lt;name&gt;.exec</code></a></span></dt><dd><p>Command executed after the profile is succesfully applied.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -10620,8 +10804,12 @@ background "#cccccc"
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/syncthing.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/syncthing.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.syncthing.tray"></a><a class="term" href="options.html#opt-services.syncthing.tray"><code class="option">services.syncthing.tray</code></a></span></dt><dd><p>Whether to enable QSyncthingTray service.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        false
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.syncthing.tray"></a><a class="term" href="options.html#opt-services.syncthing.tray"><code class="option">services.syncthing.tray</code></a></span></dt><dd><p>Syncthing tray service configuration.</p><p><span class="emphasis"><em>Type:</em></span> boolean or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        enable = false; 
+        }
+    
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/syncthing.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/syncthing.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.taffybar.enable"></a><a class="term" href="options.html#opt-services.taffybar.enable"><code class="option">services.taffybar.enable</code></a></span></dt><dd><p>Whether to enable Taffybar.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -11304,21 +11492,6 @@ GNU/Linux distributions other than NixOS.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/generic-linux.nix#blob-path" target="_top">
                     &lt;home-manager/modules/targets/generic-linux.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.genericLinux.extraXdgDataDirs"></a><a class="term" href="options.html#opt-targets.genericLinux.extraXdgDataDirs"><code class="option">targets.genericLinux.extraXdgDataDirs</code></a></span></dt><dd><p>List of directory names to add to <code class="envar">XDG_DATA_DIRS</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        
-        ]
-    
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        [
-        "/usr/share" "/usr/local/share" 
-        ]
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/generic-linux.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/targets/generic-linux.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.enable"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.enable"><code class="option">wayland.windowManager.sway.enable</code></a></span></dt><dd><p>Whether to enable sway wayland compositor.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -11605,6 +11778,14 @@ contents (when restoring layouts). Border and indicator are ignored.
         background = "#900000"; border = "#2f343a"; childBorder = "#900000"; indicator = "#900000"; text = "#ffffff"; 
         }
     
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.defaultWorkspace"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.defaultWorkspace"><code class="option">wayland.windowManager.sway.config.defaultWorkspace</code></a></span></dt><dd><p>The default workspace to show when sway is launched.
+This must to correspond to the value of the keybinding of the default workspace.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "workspace number 9"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.down"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.down"><code class="option">wayland.windowManager.sway.config.down</code></a></span></dt><dd><p>Home row direction key for moving down.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -12286,6 +12467,26 @@ the list is attempted, and so on.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-mime-apps.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg-mime-apps.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.systemDirs.config"></a><a class="term" href="options.html#opt-xdg.systemDirs.config"><code class="option">xdg.systemDirs.config</code></a></span></dt><dd><p>Directory names to add to <code class="envar">XDG_CONFIG_DIRS</code>
+in the user session.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "/etc/xdg" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-system-dirs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg-system-dirs.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.systemDirs.data"></a><a class="term" href="options.html#opt-xdg.systemDirs.data"><code class="option">xdg.systemDirs.data</code></a></span></dt><dd><p>Directory names to add to <code class="envar">XDG_DATA_DIRS</code>
+in the user session.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "/usr/share" "/usr/local/share" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-system-dirs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg-system-dirs.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.userDirs.enable"></a><a class="term" href="options.html#opt-xdg.userDirs.enable"><code class="option">xdg.userDirs.enable</code></a></span></dt><dd><p>Whether to manage <code class="filename">$XDG_CONFIG_HOME/user-dirs.dirs</code>.
 </p><p>
 The generated file is read-only.
@@ -12948,6 +13149,14 @@ contents (when restoring layouts). Border and indicator are ignored.
         background = "#900000"; border = "#2f343a"; childBorder = "#900000"; indicator = "#900000"; text = "#ffffff"; 
         }
     
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.defaultWorkspace"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.defaultWorkspace"><code class="option">xsession.windowManager.i3.config.defaultWorkspace</code></a></span></dt><dd><p>The default workspace to show when i3 is launched.
+This must to correspond to the value of the keybinding of the default workspace.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "workspace number 9"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.floating"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.floating"><code class="option">xsession.windowManager.i3.config.floating</code></a></span></dt><dd><p>Floating window settings.</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">

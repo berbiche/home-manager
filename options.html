@@ -482,8 +482,8 @@ configuration.
 }
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mbsync.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.masterPattern"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.masterPattern"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.groups.&lt;name&gt;.channels.&lt;name&gt;.masterPattern</code></a></span></dt><dd><p>IMAP4 patterns for which mailboxes on the remote mail server to sync.
-If <code class="literal">Patterns</code> are specified, <code class="literal">masterPattern</code>
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.farPattern"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.farPattern"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.groups.&lt;name&gt;.channels.&lt;name&gt;.farPattern</code></a></span></dt><dd><p>IMAP4 patterns for which mailboxes on the remote mail server to sync.
+If <code class="literal">Patterns</code> are specified, <code class="literal">farPattern</code>
 is interpreted as a prefix which is not matched against the patterns,
 and is not affected by mailbox list overrides.
 </p><p>
@@ -504,8 +504,20 @@ name to mbsync on the command line.
         "‹name›"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mbsync.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.nearPattern"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.nearPattern"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.groups.&lt;name&gt;.channels.&lt;name&gt;.nearPattern</code></a></span></dt><dd><p>Name for where mail coming from the remote (far) mail server will end up
+locally. The mailbox specified by the far pattern will be placed in
+this directory.
+</p><p>
+If this is left as the default, then mbsync will default to the pattern
+<code class="literal">INBOX</code>.
+</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "Sent"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/mbsync.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.patterns"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.patterns"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.groups.&lt;name&gt;.channels.&lt;name&gt;.patterns</code></a></span></dt><dd><p>Instead of synchronizing <span class="emphasis"><em>just</em></span> the mailboxes that
-match the <code class="literal">masterPattern</code>, use it as a prefix which is
+match the <code class="literal">farPattern</code>, use it as a prefix which is
 not matched against the patterns, and is not affected by mailbox list
 overrides.
 </p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -520,18 +532,6 @@ overrides.
         "INBOX" 
         ]
     
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/mbsync.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.slavePattern"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.groups._name_.channels._name_.slavePattern"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.groups.&lt;name&gt;.channels.&lt;name&gt;.slavePattern</code></a></span></dt><dd><p>Name for where mail coming from the master mail server will end up
-locally. The mailbox specified by the master's pattern will be placed
-in this directory.
-</p><p>
-If this is left as the default, then mbsync will default to the pattern
-<code class="literal">INBOX</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        ""
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        "Sent"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mbsync.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.groups._name_.name"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.groups._name_.name"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.groups.&lt;name&gt;.name</code></a></span></dt><dd><p>The name of this group for this account. These names are different than
@@ -2547,7 +2547,16 @@ this should be a wrapped Firefox package. For earlier state
 versions it should be an unwrapped Firefox package.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         pkgs.firefox
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.firefox.override {
+  # See nixpkgs' firefox/wrapper.nix to check which options you can use
+  cfg = {
+    # Gnome shell native connector
+    enableGnomeExtensions = true;
+    # Tridactyl native connector
+    enableTridactylNative = true;
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/firefox.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.extensions"></a><a class="term" href="options.html#opt-programs.firefox.extensions"><code class="option">programs.firefox.extensions</code></a></span></dt><dd><p>List of Firefox add-on packages to install. Some
 pre-packaged add-ons are accessible from NUR,
@@ -3393,6 +3402,8 @@ in the gpg scdaemon manpage:
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.settings"></a><a class="term" href="options.html#opt-programs.gpg.settings"><code class="option">programs.gpg.settings</code></a></span></dt><dd><p>GnuPG configuration options. Available options are described
 in the gpg manpage:
 <a class="link" href="https://gnupg.org/documentation/manpage.html" target="_top">https://gnupg.org/documentation/manpage.html</a>.
+</p><p>
+Note that lists are converted to duplicate keys.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or boolean or list of stringss</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
   no-comments = false;
   s2k-cipher-algo = "AES128";
@@ -8996,7 +9007,7 @@ but are substituted anywhere on a line.
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "adwaita-dark"
-      </code></p><p><span class="emphasis"><em>Related packages:</em></span> </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">pkgs.adwaita-qt</code> (adwaita-qt-1.1.4): A style to bend Qt applications to look like they belong into GNOME Shell</p></li><li class="listitem"><p><code class="literal">pkgs.libsForQt5.qtstyleplugins</code> (qtstyleplugins-unstable-2017-03-11): Additional style plugins for Qt5, including BB10, GTK, Cleanlooks, Motif, Plastique</p></li></ul></div><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Related packages:</em></span> </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">pkgs.adwaita-qt</code> (adwaita-qt-1.3.0): A style to bend Qt applications to look like they belong into GNOME Shell</p></li><li class="listitem"><p><code class="literal">pkgs.libsForQt5.qtstyleplugins</code> (qtstyleplugins-unstable-2017-03-11): Additional style plugins for Qt5, including BB10, GTK, Cleanlooks, Motif, Plastique</p></li></ul></div><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/qt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.barrier.client.enable"></a><a class="term" href="options.html#opt-services.barrier.client.enable"><code class="option">services.barrier.client.enable</code></a></span></dt><dd><p>Whether to enable Barrier Client daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false

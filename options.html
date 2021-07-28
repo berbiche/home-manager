@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix A. Configuration Options</title><link rel="stylesheet" type="text/css" href="style.css" /><link rel="stylesheet" type="text/css" href="overrides.css" /><link rel="stylesheet" type="text/css" href="mono-blue.css" /><script src="highlight.pack.js" type="text/javascript"></script><script src="highlight.load.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><link rel="home" href="index.html" title="Home Manager Manual" /><link rel="up" href="index.html" title="Home Manager Manual" /><link rel="prev" href="index.html" title="Home Manager Manual" /><link rel="next" href="nixos-options.html" title="Appendix B. NixOS Module Options" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Configuration Options</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="nixos-options.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="ch-options"></a>Appendix A. Configuration Options</h1></div></div></div><div class="variablelist"><a id="home-manager-options"></a><dl class="variablelist"><dt><span class="term"><a id="opt-accounts.email.accounts"></a><a class="term" href="options.html#opt-accounts.email.accounts"><code class="option">accounts.email.accounts</code></a></span></dt><dd><p>List of email accounts.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix A. Configuration Options</title><link rel="stylesheet" type="text/css" href="style.css" /><link rel="stylesheet" type="text/css" href="overrides.css" /><link rel="stylesheet" type="text/css" href="mono-blue.css" /><script src="highlight.pack.js" type="text/javascript"></script><script src="highlight.load.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><link rel="home" href="index.html" title="Home Manager Manual" /><link rel="up" href="index.html" title="Home Manager Manual" /><link rel="prev" href="index.html" title="Home Manager Manual" /><link rel="next" href="nixos-options.html" title="Appendix B. NixOS Module Options" /></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Configuration Options</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="nixos-options.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="ch-options"></a>Appendix A. Configuration Options</h1></div></div></div><div class="variablelist"><a id="home-manager-options"></a><dl class="variablelist"><dt><span class="term"><a id="opt-package"></a><a class="term" href="options.html#opt-package"><code class="option">package</code></a></span></dt><dd><p>Package containing the <span class="command"><strong>volnoti</strong></span> program.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.volnoti
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/volnoti.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/volnoti.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts"></a><a class="term" href="options.html#opt-accounts.email.accounts"><code class="option">accounts.email.accounts</code></a></span></dt><dd><p>List of email accounts.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -5752,6 +5757,45 @@ with this enabled only the relative name is shown.
         pkgs.neovim-unwrapped
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.enable"></a><a class="term" href="options.html#opt-programs.neovim.coc.enable"><code class="option">programs.neovim.coc.enable</code></a></span></dt><dd><p>Whether to enable Coc.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.settings"></a><a class="term" href="options.html#opt-programs.neovim.coc.settings"><code class="option">programs.neovim.coc.settings</code></a></span></dt><dd><p>Extra configuration lines to add to
+<code class="filename">$XDG_CONFIG_HOME/nvim/coc-settings.json</code>
+See
+<a class="link" href="https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file" target="_top">https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file</a>
+for options.
+</p><p><span class="emphasis"><em>Type:</em></span> JSON value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  "suggest.noselect" = true;
+  "suggest.enablePreview" = true;
+  "suggest.enablePreselect" = false;
+  "suggest.disableKind" = true;
+  languageserver = {
+    haskell = {
+      command = "haskell-language-server-wrapper";
+      args = [ "--lsp" ];
+      rootPatterns = [
+        "*.cabal"
+        "stack.yaml"
+        "cabal.project"
+        "package.yaml"
+        "hie.yaml"
+      ];
+      filetypes = [ "haskell" "lhaskell" ];
+    };
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.configure"></a><a class="term" href="options.html#opt-programs.neovim.configure"><code class="option">programs.neovim.configure</code></a></span></dt><dd><p>Deprecated. Please use the other options.
 
 Generate your init file from your list of plugins and custom commands,
@@ -5807,6 +5851,9 @@ list of Python 3 packages required for your plugins to work.
 </p><p><span class="emphasis"><em>Type:</em></span> python3 packages in python.withPackages format or list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "ps: []"
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">(ps: with ps; [ python-language-server ])</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.generatedConfigViml"></a><a class="term" href="options.html#opt-programs.neovim.generatedConfigViml"><code class="option">programs.neovim.generatedConfigViml</code></a></span></dt><dd><p>Generated vimscript config.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n" <span class="emphasis"><em>(read only)</em></span></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.plugins"></a><a class="term" href="options.html#opt-programs.neovim.plugins"><code class="option">programs.neovim.plugins</code></a></span></dt><dd><p>List of vim plugins to install optionally associated with
 configuration to be placed in init.vim.
@@ -9545,12 +9592,6 @@ See <span class="command"><strong>barrierc --help</strong></span>.
 Port defaults to <code class="literal">24800</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/barrier.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/barrier.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.barrier.client.tray"></a><a class="term" href="options.html#opt-services.barrier.client.tray"><code class="option">services.barrier.client.tray</code></a></span></dt><dd><p>Whether to enable the system tray icon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/barrier.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/barrier.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.blueman-applet.enable"></a><a class="term" href="options.html#opt-services.blueman-applet.enable"><code class="option">services.blueman-applet.enable</code></a></span></dt><dd><p>Whether to enable the Blueman applet.
 </p><p>
 Note, for the applet to work, the 'blueman' service should
@@ -11409,6 +11450,34 @@ for more information about the format.
         "*:0/5"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/taskwarrior-sync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/taskwarrior-sync.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.trayer.enable"></a><a class="term" href="options.html#opt-services.trayer.enable"><code class="option">services.trayer.enable</code></a></span></dt><dd><p>Whether to enable trayer, the lightweight GTK2+ systray for UNIX desktops.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/trayer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/trayer.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.trayer.package"></a><a class="term" href="options.html#opt-services.trayer.package"><code class="option">services.trayer.package</code></a></span></dt><dd><p>The package to use for the trayer binary.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.trayer
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.trayer</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/trayer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/trayer.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.trayer.settings"></a><a class="term" href="options.html#opt-services.trayer.settings"><code class="option">services.trayer.settings</code></a></span></dt><dd><p>Trayer configuration as a set of attributes. Further details can be
+found at <a class="link" href="https://github.com/sargon/trayer-srg" target="_top">https://github.com/sargon/trayer-srg</a>.
+
+</p><div class="informaltable"><table class="informaltable" border="0"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Property Name</th><th>Type</th><th>Values</th><th>Default</th></tr></thead><tbody><tr><td><code class="varname">SetDockType</code></td><td>boolean</td><td>true|false</td><td>true</td></tr><tr><td><code class="varname">SetPartialStrut</code></td><td>boolean</td><td>true|false</td><td>true</td></tr><tr><td><code class="varname">align</code></td><td>string</td><td>left|right|center</td><td>center</td></tr><tr><td><code class="varname">alpha</code></td><td>signed integer</td><td>number</td><td>127</td></tr><tr><td><code class="varname">distance</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">distancefrom</code></td><td>string</td><td>left|right|top|bottom</td><td>top</td></tr><tr><td><code class="varname">edge</code></td><td>string</td><td>left|right|top|bottom|none</td><td>bottom</td></tr><tr><td><code class="varname">expand</code></td><td>boolean</td><td>true|false</td><td>true</td></tr><tr><td><code class="varname">height</code></td><td>signed integer</td><td>number</td><td>26</td></tr><tr><td><code class="varname">heighttype</code></td><td>string</td><td>request|pixel</td><td>pixel</td></tr><tr><td><code class="varname">iconspacing</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">margin</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">monitor</code></td><td>string</td><td>number|primary</td><td>0</td></tr><tr><td><code class="varname">padding</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">tint</code></td><td>string</td><td>int</td><td>0xFFFFFFFF</td></tr><tr><td><code class="varname">transparent</code></td><td>boolean</td><td>true|false</td><td>false</td></tr><tr><td><code class="varname">width</code></td><td>signed integer</td><td>number</td><td>100</td></tr><tr><td><code class="varname">widthtype</code></td><td>string</td><td>request|pixel|percent</td><td>percent</td></tr></tbody></table></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of null or string or boolean or signed integers</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  edge = "top";
+  padding = 6;
+  SetDockType = true;
+  tint = "0x282c34";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/trayer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/trayer.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.udiskie.enable"></a><a class="term" href="options.html#opt-services.udiskie.enable"><code class="option">services.udiskie.enable</code></a></span></dt><dd><p>Whether to enable udiskie mount daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -11512,6 +11581,12 @@ for a list of available options.
         "\$XDG_DATA_HOME/unison"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/unison.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/unison.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.volnoti.enable"></a><a class="term" href="options.html#opt-services.volnoti.enable"><code class="option">services.volnoti.enable</code></a></span></dt><dd><p>Whether to enable Volnoti volume HUD daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/volnoti.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/volnoti.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.wlsunset.enable"></a><a class="term" href="options.html#opt-services.wlsunset.enable"><code class="option">services.wlsunset.enable</code></a></span></dt><dd><p>Whether to enable Whether to enable wlsunset..</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">

@@ -1871,6 +1871,51 @@ See <a class="link" href="https://github.com/astroidmail/astroid/wiki/Customizin
         "mbsync gmail"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/astroid.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/astroid.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.atuin.enable"></a><a class="term" href="options.html#opt-programs.atuin.enable"><code class="option">programs.atuin.enable</code></a></span></dt><dd><p>Whether to enable atuin.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/atuin.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/atuin.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.atuin.enableBashIntegration"></a><a class="term" href="options.html#opt-programs.atuin.enableBashIntegration"><code class="option">programs.atuin.enableBashIntegration</code></a></span></dt><dd><p>Whether to enable Atuin's Bash integration. This will bind
+<code class="literal">ctrl-r</code> to open the Atuin history.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/atuin.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/atuin.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.atuin.enableZshIntegration"></a><a class="term" href="options.html#opt-programs.atuin.enableZshIntegration"><code class="option">programs.atuin.enableZshIntegration</code></a></span></dt><dd><p>Whether to enable Atuin's Zsh integration.
+</p><p>
+If enabled, this will bind <code class="literal">ctrl-r</code> and the up-arrow
+key to open the Atuin history.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/atuin.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/atuin.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.atuin.package"></a><a class="term" href="options.html#opt-programs.atuin.package"><code class="option">programs.atuin.package</code></a></span></dt><dd><p>The package to use for atuin.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.atuin
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/atuin.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/atuin.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.atuin.settings"></a><a class="term" href="options.html#opt-programs.atuin.settings"><code class="option">programs.atuin.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">~/.config/atuin/config.toml</code>.
+</p><p>
+See <a class="link" href="https://github.com/ellie/atuin/blob/main/docs/config.md" target="_top">https://github.com/ellie/atuin/blob/main/docs/config.md</a> for the full list
+of options.
+</p><p><span class="emphasis"><em>Type:</em></span> Atuin configuration</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  auto_sync = true;
+  sync_frequency = "5m";
+  sync_address = "https://api.atuin.sh";
+  search_mode = "prefix";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/atuin.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/atuin.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.autojump.enable"></a><a class="term" href="options.html#opt-programs.autojump.enable"><code class="option">programs.autojump.enable</code></a></span></dt><dd><p>Whether to enable autojump.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -2836,6 +2881,35 @@ handles extension side-loading.
         }
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/firefox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.profiles._name_.bookmarks"></a><a class="term" href="options.html#opt-programs.firefox.profiles._name_.bookmarks"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks</code></a></span></dt><dd><p>Preloaded bookmarks. Note, this may silently overwrite any
+previously existing bookmarks!
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  wikipedia = {
+    keyword = "wiki";
+    url = "https://en.wikipedia.org/wiki/Special:Search?search=%s&amp;go=Go";
+  };
+  "kernel.org" = {
+    url = "https://www.kernel.org";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/firefox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.profiles._name_.bookmarks._name_.keyword"></a><a class="term" href="options.html#opt-programs.firefox.profiles._name_.bookmarks._name_.keyword"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks.&lt;name&gt;.keyword</code></a></span></dt><dd><p>Bookmark search keyword.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/firefox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.profiles._name_.bookmarks._name_.name"></a><a class="term" href="options.html#opt-programs.firefox.profiles._name_.bookmarks._name_.name"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks.&lt;name&gt;.name</code></a></span></dt><dd><p>Bookmark name.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "‹name›"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/firefox.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.profiles._name_.bookmarks._name_.url"></a><a class="term" href="options.html#opt-programs.firefox.profiles._name_.bookmarks._name_.url"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks.&lt;name&gt;.url</code></a></span></dt><dd><p>Bookmark url, use %s for search terms.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/firefox.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.firefox.profiles._name_.extraConfig"></a><a class="term" href="options.html#opt-programs.firefox.profiles._name_.extraConfig"><code class="option">programs.firefox.profiles.&lt;name&gt;.extraConfig</code></a></span></dt><dd><p>Extra preferences to add to <code class="filename">user.js</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -5903,6 +5977,75 @@ use Python 3 plugins.
         pkgs.nix-index
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nix-index.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/nix-index.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.enable"></a><a class="term" href="options.html#opt-programs.nnn.enable"><code class="option">programs.nnn.enable</code></a></span></dt><dd><p>Whether to enable nnn.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.package"></a><a class="term" href="options.html#opt-programs.nnn.package"><code class="option">programs.nnn.package</code></a></span></dt><dd><p>Package containing the <span class="command"><strong>nnn</strong></span> program.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.nnn
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.nnn.override ({ withNerdIcons = true; });</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.bookmarks"></a><a class="term" href="options.html#opt-programs.nnn.bookmarks"><code class="option">programs.nnn.bookmarks</code></a></span></dt><dd><p>Directory bookmarks.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  d = "~/Documents";
+  D = "~/Downloads";
+  p = "~/Pictures";
+  v = "~/Videos";
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.extraPackages"></a><a class="term" href="options.html#opt-programs.nnn.extraPackages"><code class="option">programs.nnn.extraPackages</code></a></span></dt><dd><p>Extra packages available to nnn.
+</p><p><span class="emphasis"><em>Type:</em></span> list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">with pkgs; [ ffmpegthumbnailer mediainfo sxiv ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.plugins"></a><a class="term" href="options.html#opt-programs.nnn.plugins"><code class="option">programs.nnn.plugins</code></a></span></dt><dd><p>Manage nnn plugins.
+</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.plugins.mappings"></a><a class="term" href="options.html#opt-programs.nnn.plugins.mappings"><code class="option">programs.nnn.plugins.mappings</code></a></span></dt><dd><p>Key mappings to the plugins.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  c = "fzcd";
+  f = "finder";
+  v = "imgview";
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nnn.plugins.src"></a><a class="term" href="options.html#opt-programs.nnn.plugins.src"><code class="option">programs.nnn.plugins.src</code></a></span></dt><dd><p>Path to the plugin folder.
+</p><p><span class="emphasis"><em>Type:</em></span> null or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">(pkgs.fetchFromGitHub {
+  owner = "jarun";
+  repo = "nnn";
+  rev = "v4.0";
+  sha256 = "sha256-Hpc8YaJeAzJoEi7aJ6DntH2VLkoR6ToP6tPYn3llR7k=";
+}) + "/plugins";
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nnn.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nnn.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.noti.enable"></a><a class="term" href="options.html#opt-programs.noti.enable"><code class="option">programs.noti.enable</code></a></span></dt><dd><p>Whether to enable Noti.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -8247,6 +8390,10 @@ of options.
                     &lt;home-manager/modules/programs/vim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vim.package"></a><a class="term" href="options.html#opt-programs.vim.package"><code class="option">programs.vim.package</code></a></span></dt><dd><p>Resulting customized vim package</p><p><span class="emphasis"><em>Type:</em></span> package <span class="emphasis"><em>(read only)</em></span></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vim.packageConfigurable"></a><a class="term" href="options.html#opt-programs.vim.packageConfigurable"><code class="option">programs.vim.packageConfigurable</code></a></span></dt><dd><p>Configurable vim package</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "pkgs.vim_configurable"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/vim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vim.extraConfig"></a><a class="term" href="options.html#opt-programs.vim.extraConfig"><code class="option">programs.vim.extraConfig</code></a></span></dt><dd><p>Custom .vimrc lines</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
@@ -8298,7 +8445,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.60.1)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.60.2)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -9702,10 +9849,9 @@ desired.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.easyeffects.enable"></a><a class="term" href="options.html#opt-services.easyeffects.enable"><code class="option">services.easyeffects.enable</code></a></span></dt><dd><p>Whether to enable Easyeffects daemon.
 Note, it is necessary to add
 </p><pre class="programlisting nix">
-services.dbus.packages = with pkgs; [ gnome.dconf ];
+programs.dconf.enable = true;
 </pre><p>
-to your system configuration for the daemon to work correctly
-.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+to your system configuration for the daemon to work correctly.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
@@ -9740,6 +9886,21 @@ else pkgs.emacs
         
         [
         "-c" 
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/emacs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/emacs.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.emacs.extraOptions"></a><a class="term" href="options.html#opt-services.emacs.extraOptions"><code class="option">services.emacs.extraOptions</code></a></span></dt><dd><p>Extra command-line arguments to pass to <span class="command"><strong>emacs</strong></span>.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        [
+        "-f" "exwm-enable" 
         ]
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/emacs.nix#blob-path" target="_top">
@@ -10276,11 +10437,17 @@ docked = {
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/kanshi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/kanshi.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.kanshi.profiles._name_.exec"></a><a class="term" href="options.html#opt-services.kanshi.profiles._name_.exec"><code class="option">services.kanshi.profiles.&lt;name&gt;.exec</code></a></span></dt><dd><p>Command executed after the profile is succesfully applied.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        null
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.kanshi.profiles._name_.exec"></a><a class="term" href="options.html#opt-services.kanshi.profiles._name_.exec"><code class="option">services.kanshi.profiles.&lt;name&gt;.exec</code></a></span></dt><dd><p>Commands executed after the profile is succesfully applied.
+Note that if you provide multiple commands, they will be
+executed asynchronously with no guaranteed ordering.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings or string convertible to it</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        "\${pkg.sway}/bin/swaymsg workspace 1, move workspace to eDP-1"
+        "[ \${pkg.sway}/bin/swaymsg workspace 1, move workspace to eDP-1 ]"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/kanshi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/kanshi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.kanshi.profiles._name_.outputs"></a><a class="term" href="options.html#opt-services.kanshi.profiles._name_.outputs"><code class="option">services.kanshi.profiles.&lt;name&gt;.outputs</code></a></span></dt><dd><p>Outputs configuration.
@@ -11147,7 +11314,12 @@ click-right=pavucontrol &amp;
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/poweralertd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/poweralertd.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.enable"></a><a class="term" href="options.html#opt-services.pulseeffects.enable"><code class="option">services.pulseeffects.enable</code></a></span></dt><dd><p>Whether to enable Pulseeffects daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.enable"></a><a class="term" href="options.html#opt-services.pulseeffects.enable"><code class="option">services.pulseeffects.enable</code></a></span></dt><dd><p>Whether to enable Pulseeffects daemon
+Note, it is necessary to add
+</p><pre class="programlisting nix">
+programs.dconf.enable = true;
+</pre><p>
+to your system configuration for the daemon to work correctly.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
@@ -11302,14 +11474,12 @@ Available options for Redshift described in
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/screen-locker.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.enableDetectSleep"></a><a class="term" href="options.html#opt-services.screen-locker.enableDetectSleep"><code class="option">services.screen-locker.enableDetectSleep</code></a></span></dt><dd><p>Whether to reset timers when awaking from sleep.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/screen-locker.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.inactiveInterval"></a><a class="term" href="options.html#opt-services.screen-locker.inactiveInterval"><code class="option">services.screen-locker.inactiveInterval</code></a></span></dt><dd><p>Inactive time interval in minutes after which session will be locked.
 The minimum is 1 minute, and the maximum is 1 hour.
+If <code class="option">xautolock.enable</code> is true, it will use this setting.
 See <a class="link" href="https://linux.die.net/man/1/xautolock" target="_top">https://linux.die.net/man/1/xautolock</a>.
+Otherwise, this will be used with <span class="command"><strong>xset</strong></span> to configure
+the X server's screensaver timeout.
 </p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         10
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
@@ -11318,7 +11488,23 @@ See <a class="link" href="https://linux.die.net/man/1/xautolock" target="_top">h
         "\${pkgs.i3lock}/bin/i3lock -n -c 000000"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/screen-locker.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xautolockExtraOptions"></a><a class="term" href="options.html#opt-services.screen-locker.xautolockExtraOptions"><code class="option">services.screen-locker.xautolockExtraOptions</code></a></span></dt><dd><p>Extra command-line arguments to pass to <span class="command"><strong>xautolock</strong></span>.
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xautolock.enable"></a><a class="term" href="options.html#opt-services.screen-locker.xautolock.enable"><code class="option">services.screen-locker.xautolock.enable</code></a></span></dt><dd><p>Use xautolock for time-based locking.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/screen-locker.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xautolock.package"></a><a class="term" href="options.html#opt-services.screen-locker.xautolock.package"><code class="option">services.screen-locker.xautolock.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>xautolock</strong></span> binary.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        <em class="replaceable"><code>(build of xautolock-2.2-7-ga23dd5c)</code></em>
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/screen-locker.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xautolock.detectSleep"></a><a class="term" href="options.html#opt-services.screen-locker.xautolock.detectSleep"><code class="option">services.screen-locker.xautolock.detectSleep</code></a></span></dt><dd><p>Whether to reset xautolock timers when awaking from sleep.
+No effect if <code class="option">xautolock.enable</code> is false.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/screen-locker.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xautolock.extraOptions"></a><a class="term" href="options.html#opt-services.screen-locker.xautolock.extraOptions"><code class="option">services.screen-locker.xautolock.extraOptions</code></a></span></dt><dd><p>Extra command-line arguments to pass to <span class="command"><strong>xautolock</strong></span>.
+No effect if <code class="option">xautolock.enable</code> is false.
 </p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
@@ -11327,7 +11513,12 @@ See <a class="link" href="https://linux.die.net/man/1/xautolock" target="_top">h
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/screen-locker.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xssLockExtraOptions"></a><a class="term" href="options.html#opt-services.screen-locker.xssLockExtraOptions"><code class="option">services.screen-locker.xssLockExtraOptions</code></a></span></dt><dd><p>Extra command-line arguments to pass to <span class="command"><strong>xss-lock</strong></span>.
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xss-lock.package"></a><a class="term" href="options.html#opt-services.screen-locker.xss-lock.package"><code class="option">services.screen-locker.xss-lock.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>xss-lock</strong></span> binary.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        <em class="replaceable"><code>(build of xss-lock-unstable-2018-05-31)</code></em>
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/screen-locker.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/screen-locker.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.screen-locker.xss-lock.extraOptions"></a><a class="term" href="options.html#opt-services.screen-locker.xss-lock.extraOptions"><code class="option">services.screen-locker.xss-lock.extraOptions</code></a></span></dt><dd><p>Extra command-line arguments to pass to <span class="command"><strong>xss-lock</strong></span>.
 </p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
@@ -11843,6 +12034,23 @@ The command is automatically escaped.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         pkgs.xsettingsd
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/xsettingsd.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/xsettingsd.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xsettingsd.settings"></a><a class="term" href="options.html#opt-services.xsettingsd.settings"><code class="option">services.xsettingsd.settings</code></a></span></dt><dd><p>Xsettingsd options for configuration file. See
+<a class="link" href="https://github.com/derat/xsettingsd/wiki/Settings" target="_top">https://github.com/derat/xsettingsd/wiki/Settings</a>
+for documentation on these values.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of boolean or signed integer or strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  "Net/ThemeName" = "Numix";
+  "Xft/Antialias" = true;
+  "Xft/Hinting" = true;
+  "Xft/RGBA" = "rgb";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/xsettingsd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/xsettingsd.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xsuspender.enable"></a><a class="term" href="options.html#opt-services.xsuspender.enable"><code class="option">services.xsuspender.enable</code></a></span></dt><dd><p>Whether to enable XSuspender.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false

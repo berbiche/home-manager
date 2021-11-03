@@ -841,11 +841,9 @@ undefined for state version ≥ 20.09
                     &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.keyboard"></a><a class="term" href="options.html#opt-home.keyboard"><code class="option">home.keyboard</code></a></span></dt><dd><p>Keyboard configuration. Set to <code class="literal">null</code> to
 disable Home Manager keyboard management.
-</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        {
-        
-        }
-    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">"{ }"  for state version &lt; 21.11,
+"null" for state version ≥ 21.11
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.keyboard.layout"></a><a class="term" href="options.html#opt-home.keyboard.layout"><code class="option">home.keyboard.layout</code></a></span></dt><dd><p>Keyboard layout. If <code class="literal">null</code>, then the system
 configuration will be used.
@@ -917,13 +915,22 @@ version ≥ 19.09 and <code class="literal">""</code> otherwise.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.language.time"></a><a class="term" href="options.html#opt-home.language.time"><code class="option">home.language.time</code></a></span></dt><dd><p>The language to use for formatting times.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.sessionPath"></a><a class="term" href="options.html#opt-home.sessionPath"><code class="option">home.sessionPath</code></a></span></dt><dd><p>Extra directories to add to <code class="envar">PATH</code>.</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.sessionPath"></a><a class="term" href="options.html#opt-home.sessionPath"><code class="option">home.sessionPath</code></a></span></dt><dd><p>Extra directories to add to <code class="envar">PATH</code>.
+
+</p><p>
+
+These directories are added to the <code class="envar">PATH</code> variable in a
+double-quoted context, so expressions like <code class="code">$HOME</code> are
+expanded by the shell. However, since expressions like <code class="code">~</code> or
+<code class="code">*</code> are escaped, they will end up in the <code class="envar">PATH</code>
+verbatim.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         [
         
         ]
     </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         [
-        ".git/safe/../../bin" "\${xdg.configHome}/emacs/bin" "~/.local/bin" 
+        "$HOME/.local/bin" "\${xdg.configHome}/emacs/bin" ".git/safe/../../bin" 
         ]
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
@@ -2220,9 +2227,6 @@ the completion path. The <code class="filename">init.fish</code> and
 they exist.
 </p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/fish.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fish.promptInit"></a><a class="term" href="options.html#opt-programs.fish.promptInit"><code class="option">programs.fish.promptInit</code></a></span></dt><dd><p>Shell script code used to initialise fish prompt.
-</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fish.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/fish.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fish.shellAbbrs"></a><a class="term" href="options.html#opt-programs.fish.shellAbbrs"><code class="option">programs.fish.shellAbbrs</code></a></span></dt><dd><p>An attribute set that maps aliases (the top level attribute names
 in this option) to abbreviations. Abbreviations are expanded with
 the longer phrase after they are entered.
@@ -2852,17 +2856,12 @@ for supported values.
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/hexchat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/hexchat.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.hexchat.theme"></a><a class="term" href="options.html#opt-programs.hexchat.theme"><code class="option">programs.hexchat.theme</code></a></span></dt><dd><p>Theme package for HexChat. Expects a derivation containing decompressed
-theme files. <code class="literal">.hct</code> file format requires unzip
-decompression, as seen in example.
-</p><p><span class="emphasis"><em>Type:</em></span> null or package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">stdenv.mkDerivation rec {
-  name = "hexchat-theme-MatriY";
-  buildInputs = [ pkgs.unzip ];
-  src = fetchurl {
-      url = "https://dl.hexchat.net/themes/MatriY.hct";
-      sha256 = "sha256-ffkFJvySfl0Hwja3y7XCiNJceUrGvlEoEm97eYNMTZc=";
-  };
-  unpackPhase = "unzip ${src}";
-  installPhase = "cp -r . $out";
+theme files. Note, <code class="literal">.hct</code> files are actually ZIP files,
+as seen in example.
+</p><p><span class="emphasis"><em>Type:</em></span> null or package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">source = pkgs.fetchzip {
+  url = "https://dl.hexchat.net/themes/Monokai.hct#Monokai.zip";
+  sha256 = "sha256-WCdgEr8PwKSZvBMs0fN7E2gOjNM0c2DscZGSKSmdID0=";
+  stripRoot = false;
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/hexchat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/hexchat.nix&gt;
@@ -6026,7 +6025,7 @@ overlay or set this option. Example overlay configuration:
 ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.keybindings._.args"></a><a class="term" href="options.html#opt-programs.vscode.keybindings._.args"><code class="option">programs.vscode.keybindings.*.args</code></a></span></dt><dd><p>Optional arguments for a command.</p><p><span class="emphasis"><em>Type:</em></span> null or attribute set</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.keybindings._.args"></a><a class="term" href="options.html#opt-programs.vscode.keybindings._.args"><code class="option">programs.vscode.keybindings.*.args</code></a></span></dt><dd><p>Optional arguments for a command.</p><p><span class="emphasis"><em>Type:</em></span> null or JSON value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         {
         direction = "up"; 
         }
@@ -6677,6 +6676,8 @@ but are substituted anywhere on a line.
         
         ]
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zplug.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/zplug.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.zplug.zplugHome"></a><a class="term" href="options.html#opt-programs.zsh.zplug.zplugHome"><code class="option">programs.zsh.zplug.zplugHome</code></a></span></dt><dd><p>Path to zplug home directory.</p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"~/.zplug"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zplug.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zplug.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-qt.enable"></a><a class="term" href="options.html#opt-qt.enable"><code class="option">qt.enable</code></a></span></dt><dd><p>Whether to enable Qt 4 and 5 configuration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/qt.nix&gt;

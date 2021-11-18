@@ -89,7 +89,7 @@ indicate the nature of the provider.
 When this indicates a specific provider then, for example,
 the IMAP and SMTP server configuration may be set
 automatically.
-</p><p><span class="emphasis"><em>Type:</em></span> one of "plain", "gmail.com", "runbox.com"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"plain"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> one of "plain", "gmail.com", "runbox.com", "fastmail.com"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"plain"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
                     &lt;home-manager/modules/accounts/email.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.folders"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.folders"><code class="option">accounts.email.accounts.&lt;name&gt;.folders</code></a></span></dt><dd><p>Standard email folders.
 </p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -972,6 +972,23 @@ home.sessionVariables = {
         EDITOR = "emacs"; GS_OPTIONS = "-sPAPERSIZE=a4"; 
         }
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/home-environment.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.shellAliases"></a><a class="term" href="options.html#opt-home.shellAliases"><code class="option">home.shellAliases</code></a></span></dt><dd><p>An attribute set that maps aliases (the top level attribute names
+in this option) to command strings or directly to build outputs.
+</p><p>
+This option should only be used to manage simple aliases that are
+compatible across all shells. If you need to use a shell specific
+feature then make sure to use a shell specific option, for example
+<a class="xref" href="options.html#opt-programs.bash.shellAliases"><code class="option">programs.bash.shellAliases</code></a> for Bash.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  g = "git";
+  "..." = "cd ../..";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.stateVersion"></a><a class="term" href="options.html#opt-home.stateVersion"><code class="option">home.stateVersion</code></a></span></dt><dd><p>It is occasionally necessary for Home Manager to change
 configuration defaults in a way that is incompatible with
@@ -1932,8 +1949,6 @@ for the full list of options.
                     &lt;home-manager/modules/programs/direnv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.nix-direnv.enable"></a><a class="term" href="options.html#opt-programs.direnv.nix-direnv.enable"><code class="option">programs.direnv.nix-direnv.enable</code></a></span></dt><dd><p>Whether to enable <a class="link" href="https://github.com/nix-community/nix-direnv" target="_top">nix-direnv</a>,
     a fast, persistent use_nix implementation for direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/programs/direnv.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.nix-direnv.enableFlakes"></a><a class="term" href="options.html#opt-programs.direnv.nix-direnv.enableFlakes"><code class="option">programs.direnv.nix-direnv.enableFlakes</code></a></span></dt><dd><p>Whether to enable Flake support in nix-direnv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/direnv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/direnv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.direnv.stdlib"></a><a class="term" href="options.html#opt-programs.direnv.stdlib"><code class="option">programs.direnv.stdlib</code></a></span></dt><dd><p>Custom stdlib written to
 <code class="filename">~/.config/direnv/direnvrc</code>.
@@ -3997,7 +4012,7 @@ control the default matplotlib behavior.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.enable"></a><a class="term" href="options.html#opt-programs.mpv.enable"><code class="option">programs.mpv.enable</code></a></span></dt><dd><p>Whether to enable mpv.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mpv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.package"></a><a class="term" href="options.html#opt-programs.mpv.package"><code class="option">programs.mpv.package</code></a></span></dt><dd><p>Package providing mpv.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of mpv-with-scripts-0.33.1)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of mpv-with-scripts-0.34.0)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mpv.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mpv.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mpv.bindings"></a><a class="term" href="options.html#opt-programs.mpv.bindings"><code class="option">programs.mpv.bindings</code></a></span></dt><dd><p>Input configuration written to
 <code class="filename">~/.config/mpv/input.conf</code>. See
@@ -5387,6 +5402,18 @@ should hash host names and addresses when they are added to
 the known hosts file.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.includes"></a><a class="term" href="options.html#opt-programs.ssh.includes"><code class="option">programs.ssh.includes</code></a></span></dt><dd><p>File globs of ssh config files that should be included via the
+<code class="literal">Include</code> directive.
+</p><p>
+See
+<span class="citerefentry"><span class="refentrytitle">ssh_config</span>(5)</span>
+for more information.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        [
+        
+        ]
+    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/ssh.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks"><code class="option">programs.ssh.matchBlocks</code></a></span></dt><dd><p>Specify per-host settings. Note, if the order of rules matter
 then use the DAG functions to express the dependencies as
 shown in the example.
@@ -5985,7 +6012,7 @@ manually set any options not listed above.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.enable"></a><a class="term" href="options.html#opt-programs.vscode.enable"><code class="option">programs.vscode.enable</code></a></span></dt><dd><p>Whether to enable Visual Studio Code.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.61.2)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.62.2)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
 These will override but not delete manually installed ones.
@@ -7814,7 +7841,7 @@ ramp-volume-1=🔉
 ramp-volume-2=🔊
 click-right=pavucontrol &amp;
 </pre><p>
-</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute sets</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute setss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         {
         
         }
@@ -9533,6 +9560,9 @@ the list is attempted, and so on.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-mime-apps.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg-mime-apps.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.stateHome"></a><a class="term" href="options.html#opt-xdg.stateHome"><code class="option">xdg.stateHome</code></a></span></dt><dd><p>Absolute path to directory holding application states.
+</p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"~/.local/state"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.systemDirs.config"></a><a class="term" href="options.html#opt-xdg.systemDirs.config"><code class="option">xdg.systemDirs.config</code></a></span></dt><dd><p>Directory names to add to <code class="envar">XDG_CONFIG_DIRS</code>
 in the user session.
 </p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">

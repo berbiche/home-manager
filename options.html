@@ -915,6 +915,11 @@ version ≥ 19.09 and <code class="literal">""</code> otherwise.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.language.time"></a><a class="term" href="options.html#opt-home.language.time"><code class="option">home.language.time</code></a></span></dt><dd><p>The language to use for formatting times.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
                     &lt;home-manager/modules/home-environment.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.profileDirectory"></a><a class="term" href="options.html#opt-home.profileDirectory"><code class="option">home.profileDirectory</code></a></span></dt><dd><p>The profile directory where Home Manager generations are installed.
+</p><p><span class="emphasis"><em>Type:</em></span> path <span class="emphasis"><em>(read only)</em></span></p><p><span class="emphasis"><em>Default:</em></span> </p><pre class="programlisting">"${home.homeDirectory}/.nix-profile"  or
+"/etc/profiles/per-user/${home.username}"
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/home-environment.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-home.sessionPath"></a><a class="term" href="options.html#opt-home.sessionPath"><code class="option">home.sessionPath</code></a></span></dt><dd><p>Extra directories to add to <code class="envar">PATH</code>.
 
 </p><p>
@@ -5631,7 +5636,7 @@ path to a theme configuration file.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"dark-blue-256"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/taskwarrior.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/taskwarrior.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.taskwarrior.config"></a><a class="term" href="options.html#opt-programs.taskwarrior.config"><code class="option">programs.taskwarrior.config</code></a></span></dt><dd><p>Key-value configuration written to
-<code class="filename">~/.taskrc</code>.
+<code class="filename">$XDG_CONFIG_HOME/task/taskrc</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of anythings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         {
         
@@ -5657,7 +5662,7 @@ Home Manager will attempt to create this directory.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"$XDG_DATA_HOME/task"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/taskwarrior.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/taskwarrior.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.taskwarrior.extraConfig"></a><a class="term" href="options.html#opt-programs.taskwarrior.extraConfig"><code class="option">programs.taskwarrior.extraConfig</code></a></span></dt><dd><p>Additional content written at the end of
-<code class="filename">~/.taskrc</code>.
+<code class="filename">$XDG_CONFIG_HOME/task/taskrc</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/taskwarrior.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/taskwarrior.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.terminator.enable"></a><a class="term" href="options.html#opt-programs.terminator.enable"><code class="option">programs.terminator.enable</code></a></span></dt><dd><p>Whether to enable terminator, a tiling terminal emulator.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/terminator.nix#blob-path" target="_top">
@@ -6012,7 +6017,7 @@ manually set any options not listed above.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.enable"></a><a class="term" href="options.html#opt-programs.vscode.enable"><code class="option">programs.vscode.enable</code></a></span></dt><dd><p>Whether to enable Visual Studio Code.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.62.2)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.62.3)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
 These will override but not delete manually installed ones.
@@ -6941,6 +6946,8 @@ else pkgs.emacs
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/etesync-dav.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/etesync-dav.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.flameshot.enable"></a><a class="term" href="options.html#opt-services.flameshot.enable"><code class="option">services.flameshot.enable</code></a></span></dt><dd><p>Whether to enable Flameshot.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/flameshot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/flameshot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.flameshot.package"></a><a class="term" href="options.html#opt-services.flameshot.package"><code class="option">services.flameshot.package</code></a></span></dt><dd><p>Package providing <span class="command"><strong>flameshot</strong></span>.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.flameshot</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/flameshot.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/flameshot.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.flameshot.settings"></a><a class="term" href="options.html#opt-services.flameshot.settings"><code class="option">services.flameshot.settings</code></a></span></dt><dd><p>Configuration to use for Flameshot. See
 <a class="link" href="https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini" target="_top">https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini</a>
@@ -9312,6 +9319,36 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 export _JAVA_AWT_WM_NONREPARENTING=1
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.swaynag.enable"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.swaynag.enable"><code class="option">wayland.windowManager.sway.swaynag.enable</code></a></span></dt><dd><p>Whether to enable configuration of swaynag, a lightweight error bar for sway.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/swaynag.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/swaynag.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.swaynag.settings"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.swaynag.settings"><code class="option">wayland.windowManager.sway.swaynag.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/swaynag/config</code>.
+</p><p>
+See
+<span class="citerefentry"><span class="refentrytitle">swaynag</span>(5)</span>
+for a list of avaliable options and an example configuration.
+Note, configurations declared under <code class="literal">&lt;config&gt;</code>
+will override the default type values of swaynag.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of Swaynag config atom (null, bool, int, float, str)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  "&lt;config&gt;" = {
+    edge = "bottom";
+    font = "Dina 12";
+  };
+
+  green = {
+    edge = "top";
+    background = "00AA00";
+    text = "FFFFFF";
+    button-background = "00CC00";
+    message-padding = 10;
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/swaynag.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/i3-sway/swaynag.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.systemdIntegration"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.systemdIntegration"><code class="option">wayland.windowManager.sway.systemdIntegration</code></a></span></dt><dd><p>Whether to enable <code class="filename">sway-session.target</code> on
 sway startup. This links to
 <code class="filename">graphical-session.target</code>.

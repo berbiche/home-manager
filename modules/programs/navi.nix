@@ -7,11 +7,6 @@ let
 
   yamlFormat = pkgs.formats.yaml { };
 
-  configDir = if pkgs.stdenv.isDarwin then
-    "Library/Application Support"
-  else
-    config.xdg.configHome;
-
 in {
   meta.maintainers = [ ];
 
@@ -79,7 +74,7 @@ in {
       ${cfg.package}/bin/navi widget fish | source
     '';
 
-    home.file."${configDir}/navi/config.yaml" = mkIf (cfg.settings != { }) {
+    xdg.configFile."navi/config.yaml" = mkIf (cfg.settings != { }) {
       source = yamlFormat.generate "navi-config" cfg.settings;
     };
   };
